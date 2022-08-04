@@ -8,6 +8,7 @@ This configuration is heavy inspired by [chrisatmachine](https://github.com/Chri
 
 <details>
 <summary>Plugins information</summary>
+
 - **Package Manager**: packer.nvim
 - **LSP**:
   - mason.nvim
@@ -37,4 +38,5 @@ This configuration is heavy inspired by [chrisatmachine](https://github.com/Chri
   - twilight
   - whichkey
   - zen
+
 </details>
