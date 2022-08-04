@@ -2,7 +2,7 @@
 
 Neovim configuration for programming.
 
-This configuration is heavy inspired by [chrisatmachine](https://github.com/ChristianChiarulli/nvim) config.
+This configuration is heavily inspired by [chrisatmachine](https://github.com/ChristianChiarulli/nvim) config.
 
 ## About
 
