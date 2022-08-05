@@ -70,14 +70,11 @@ local opts = {
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
+	["s"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["x"] = { "<cmd>x!<CR>", "Save and quit" },
-	["d"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["h"] = { "<cmd>set hlsearch!<CR>", "Toggle Highlight" },
-	["r"] = { "<cmd>set relativenumber!<CR>", "Toggle Relative Number" },
-	["X"] = { "<cmd>!xdg-open %<CR>", "Open file with XDG-Open" },
 	["z"] = { "<cmd>ZenMode<CR>", "Toggle ZenMode" },
+	["S"] = { "<cmd>source %<CR>", "Source current file" },
 
 	p = {
 		name = "Packer",
@@ -93,6 +90,7 @@ local mappings = {
 		b = { "<cmd>JABSOpen<cr>", "See open buffers" },
 		n = { "<cmd>bnext<cr>", "Next Buffer" },
 		p = { "<cmd>bprevious<cr>", "Prev Buffer" },
+		k = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	},
 
 	g = {
@@ -148,18 +146,28 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 	},
 
-	t = {
-		name = "Terminal",
+	o = {
+		name = "Open",
 		N = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		H = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
-		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-		t = { "<cmd>ToggleTerm direction=tab<cr>", "Tab" },
-		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+		t = { "<cmd>ToggleTerm direction=float<cr>", "Floating Terminal" },
+		T = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal Terminal" },
+		x = { "<cmd>!xdg-open %<CR>", "Open file with XDG-Open" },
 	},
-	-- TODO: Add split mappings
+
+	w = {
+		name = "Window",
+		w = { "<C-w>w", "Switch window" },
+		q = { "<C-w>q", "Quit window" },
+		s = { "<C-w>s", "Split window" },
+		v = { "<C-w>v", "Split vertically window" },
+		h = { "<C-w>h", "Go to the Left window" },
+		j = { "<C-w>j", "Go to the Down window" },
+		k = { "<C-w>k", "Go to the Up window" },
+		l = { "<C-w>l", "Go to the Right window" },
+	},
 }
 
 which_key.setup(setup)
