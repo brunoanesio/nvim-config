@@ -71,6 +71,7 @@ return require("packer").startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"jose-elias-alvarez/typescript.nvim",
+		"simrat39/rust-tools.nvim",
 		-- CMP
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-path",
