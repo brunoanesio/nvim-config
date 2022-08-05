@@ -80,6 +80,12 @@ local function lsp_keymaps(bufnr)
 	-- buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 end
 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	-- Illuminate
