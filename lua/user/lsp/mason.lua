@@ -8,6 +8,8 @@ local servers = {
 	"emmet_ls",
 	"jsonls",
 	"marksman",
+	"taplo",
+	"rust-analyzer",
 }
 local settings = {
 	ui = {
@@ -92,6 +94,11 @@ require("mason-lspconfig").setup_handlers({
 				},
 				provideFormatter = false,
 			},
+		})
+	end,
+	["rust_analyzer"] = function()
+		lspconfig.rust_analyzer.setup({
+			require("rust-tools").setup(),
 		})
 	end,
 })

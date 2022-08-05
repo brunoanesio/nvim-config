@@ -45,6 +45,8 @@ require("null-ls").setup({
 		-- Shell
 		formatting.shfmt,
 		-- diagnostics.shellcheck,
+		-- Rust
+		-- formatting.rustfmt,
 	},
 	on_attach = on_attach,
 })

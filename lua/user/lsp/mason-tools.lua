@@ -18,6 +18,8 @@ require("mason-tool-installer").setup({
 		"shfmt",
 		"stylua",
 		"typescript-language-server",
+		"taplo",
+		"rust-analyzer",
 	},
 	auto_update = false,
 	run_on_start = true,
