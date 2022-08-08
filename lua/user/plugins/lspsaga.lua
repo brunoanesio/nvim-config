@@ -5,4 +5,7 @@ saga.init_lsp_saga({
 	code_action_icon = "",
 	border_style = "rounded",
 	diagnostic_header = { " ", " ", " ", "" },
+	code_action_lightbulb = {
+		enable = false,
+	},
 })
