@@ -38,6 +38,8 @@ return require("packer").startup(function(use)
 	use("norcalli/nvim-colorizer.lua")
 	use("kylechui/nvim-surround")
 	use("declancm/cinnamon.nvim")
+	use("rmagatti/auto-session")
+	use("rmagatti/session-lens")
 
 	-- Colorschemes
 	-- use("monsonjeremy/onedark.nvim")
