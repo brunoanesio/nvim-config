@@ -6,6 +6,6 @@ saga.init_lsp_saga({
 	border_style = "rounded",
 	diagnostic_header = { " ", " ", " ", "" },
 	code_action_lightbulb = {
-		enable = false,
+		enable = true,
 	},
 })
