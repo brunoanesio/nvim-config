@@ -6,7 +6,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- custom mappings
+-- tabs
 map("n", "<leader>nt", ":tabnew<CR>", opts)
+map("n", "<leader>nc", ":tabclose<CR>", opts)
+map("n", "<leader>np", ":tabprevious<CR>", opts)
+map("n", "<leader>nn", ":tabnext<CR>", opts)
 -- buffer mappings
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprevious<CR>", opts)
