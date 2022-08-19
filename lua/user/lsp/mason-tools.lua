@@ -1,6 +1,5 @@
 require("mason-tool-installer").setup({
 	ensure_installed = {
-		"stylua",
 		"bash-language-server",
 		"black",
 		"css-lsp",
@@ -14,12 +13,12 @@ require("mason-tool-installer").setup({
 		"marksman",
 		"prettier",
 		"python-lsp-server",
+		"rust-analyzer",
 		"shellcheck",
 		"shfmt",
 		"stylua",
-		"typescript-language-server",
 		"taplo",
-		"rust-analyzer",
+		"typescript-language-server",
 	},
 	auto_update = false,
 	run_on_start = true,

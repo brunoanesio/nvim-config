@@ -1,15 +1,23 @@
-local servers = {
-	"pylsp",
-	"sumneko_lua",
-	"html",
-	"tsserver",
-	"cssls",
-	"bashls",
-	"emmet_ls",
-	"jsonls",
+local tools = {
+	"bash-language-server",
+	"black",
+	"css-lsp",
+	"djlint",
+	"emmet-ls",
+	"flake8",
+	"html-lsp",
+	"isort",
+	"json-lsp",
+	"lua-language-server",
 	"marksman",
+	"prettier",
+	"python-lsp-server",
+	"rust-analyzer",
+	"shellcheck",
+	"shfmt",
+	"stylua",
 	"taplo",
-	"rust_analyzer",
+	"typescript-language-server",
 }
 local settings = {
 	ui = {
@@ -23,8 +31,12 @@ local settings = {
 }
 require("mason").setup(settings)
 require("mason-lspconfig").setup({
-	ensure_installed = servers,
 	automatic_installation = true,
+})
+require("mason-tool-installer").setup({
+	ensure_installed = tools,
+	auto_update = false,
+	run_on_start = true,
 })
 local lspconfig = require("lspconfig")
 lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
