@@ -30,8 +30,9 @@ map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
 -- Illuminate
-map("n", "<a-n>", '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>', opts)
-map("n", "<a-p>", '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>', opts)
+map("n", "<a-n>", '<cmd>lua require"illuminate".goto_next_reference()<cr>', opts)
+map("n", "<a-p>", '<cmd>lua require"illuminate".goto_prev_reference()<cr>', opts)
+map("n", "<a-i>", '<cmd>lua require"illuminate".textobj_select()<cr>', opts)
 -- Lspsaga
 local action = require("lspsaga.action")
 map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)

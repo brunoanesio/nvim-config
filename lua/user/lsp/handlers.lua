@@ -88,8 +88,6 @@ end
 
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
-	-- Illuminate
-	require("illuminate").on_attach(client)
 	-- require("nvim-navic").attach(client, bufnr)
 end
 

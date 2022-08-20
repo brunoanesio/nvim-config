@@ -1,4 +1,20 @@
--- vim.g.Illuminate_delay = 0
--- vim.g.Illuminate_highlightUnderCursor = 0
-vim.g.Illuminate_ftblacklist = { "alpha", "NvimTree", "DressingSelect", "ToggleTerm" }
--- vim.g.Illuminate_highlightUnderCursor = 0
+require("illuminate").configure({
+	providers = {
+		"lsp",
+		"treesitter",
+		"regex",
+	},
+	delay = 100,
+	filetypes_denylist = {
+		"dirvish",
+		"fugitive",
+		"alpha",
+		"NvimTree",
+		"Toggleterm",
+		"DressingSelect",
+	},
+	filetypes_allowlist = {},
+	modes_denylist = {},
+	modes_allowlist = {},
+	under_cursor = true,
+})
