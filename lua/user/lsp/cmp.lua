@@ -48,6 +48,7 @@ local kind_icons = {
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup({
+	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done()),
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -131,4 +132,3 @@ cmp.setup({
 		native_menu = false,
 	},
 })
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
