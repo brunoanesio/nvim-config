@@ -26,7 +26,7 @@ local options = {
 	updatetime = 250,
 	-- clipboard = { "unnamed", "unnamedplus" }, -- buggy in wayland
 	completeopt = { "menu", "menuone", "noselect" },
-	guifont = "JetBrainsMono Nerd Font:h16",
+	guifont = "Iosevka Mayukai Codepro Medium:h16",
 	laststatus = 3,
 }
 
