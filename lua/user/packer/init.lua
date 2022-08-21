@@ -19,7 +19,6 @@ return require("packer").startup(function(use)
 	-- Misc
 	use("kyazdani42/nvim-web-devicons")
 	-- use("andweeb/presence.nvim")
-	use("ellisonleao/glow.nvim")
 	use("B4mbus/todo-comments.nvim")
 	use("stevearc/dressing.nvim")
 	use("nvim-lualine/lualine.nvim")
@@ -40,6 +39,7 @@ return require("packer").startup(function(use)
 	use("declancm/cinnamon.nvim")
 	use("rmagatti/auto-session")
 	use("rmagatti/session-lens")
+	use("davidgranstrom/nvim-markdown-preview")
 
 	-- Colorschemes
 	-- use("monsonjeremy/onedark.nvim")
