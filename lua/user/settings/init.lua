@@ -5,6 +5,7 @@ local options = {
 	expandtab = true,
 	shiftwidth = 4,
 	tabstop = 4,
+	softtabstop = 4,
 	hlsearch = true,
 	incsearch = true,
 	ignorecase = true,
@@ -26,7 +27,7 @@ local options = {
 	updatetime = 250,
 	-- clipboard = { "unnamed", "unnamedplus" }, -- buggy in wayland
 	completeopt = { "menu", "menuone", "noselect" },
-	guifont = "Iosevka Mayukai Codepro Medium:h16",
+	guifont = "Iosevka Mayukai Codepro:h14",
 	laststatus = 3,
 }
 
