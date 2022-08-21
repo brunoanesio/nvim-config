@@ -141,6 +141,7 @@ local mappings = {
 		t = { "<cmd>ToggleTerm direction=float<cr>", "Floating Terminal" },
 		T = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal Terminal" },
 		x = { "<cmd>!xdg-open %<CR>", "Open file with XDG-Open" },
+		m = { "<cmd>MarkdownPreview<CR>", "Open Markdown Preview" },
 	},
 
 	p = {
