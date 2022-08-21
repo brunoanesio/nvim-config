@@ -68,6 +68,7 @@ return require("packer").startup(function(use)
 	use("AckslD/nvim-neoclip.lua")
 	-- LSP
 	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use("j-hui/fidget.nvim")
 	use({
 		"neovim/nvim-lspconfig",
 		"williamboman/mason.nvim",
