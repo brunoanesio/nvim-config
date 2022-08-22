@@ -12,7 +12,7 @@ local setup = {
 			suggestions = 20,
 		},
 		presets = {
-			operators = true,
+			operators = false,
 			motions = true,
 			text_objects = true,
 			windows = true,
