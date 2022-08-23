@@ -4,6 +4,7 @@ require("project_nvim").setup({
 		"~/.local/*",
 		"~/Downloads",
 		"~/.var/*",
+		"~/.config/gtk-4.0",
 	},
 	show_hidden = false,
 })
