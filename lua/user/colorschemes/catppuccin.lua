@@ -27,16 +27,8 @@ catppuccin.setup({
 	integrations = {
 		which_key = true,
 		lightspeed = true,
-		nvimtree = {
-			enabled = false,
-			show_root = false,
-			transparent_panel = false,
-		},
-		neotree = {
-			enabled = false,
-			show_root = false,
-			transparent_panel = false,
-		},
+		nvimtree = true,
+		lsp_saga = true,
 		gitsigns = true,
 		notify = true,
 		indent_blankline = {
