@@ -30,18 +30,15 @@ map("n", "gl", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
 -- Diagnostic jump
 map("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 map("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+map("n", "[E", function()
+	require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end, { silent = true })
+map("n", "]E", function()
+	require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+end, { silent = true })
 -- Outline
 map("n", "<leader>ol", "<cmd>LSoutlineToggle<CR>", opts)
 -- Hover
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 -- Signature Help
 map("n", "gs", "<cmd>Lspsaga signature_help<CR>", opts)
-local action = require("lspsaga.action")
--- scroll in hover doc or  definition preview window
-vim.keymap.set("n", "<C-f>", function()
-	action.smart_scroll_with_saga(1)
-end, { silent = true })
--- scroll in hover doc or  definition preview window
-vim.keymap.set("n", "<C-b>", function()
-	action.smart_scroll_with_saga(-1)
-end, { silent = true })
