@@ -1,10 +1,8 @@
-local status_ok, catppuccin = pcall(require, "catppuccin")
-if not status_ok then
-	return
-end
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
-catppuccin.setup({
+require("catppuccin").setup({
+	term_colors = false,
+	transparent_background = false,
 	styles = {
 		comments = { "italic" },
 		conditionals = { "italic" },
@@ -27,7 +25,7 @@ catppuccin.setup({
 	integrations = {
 		which_key = true,
 		lightspeed = true,
-		nvimtree = true,
+		nvimtree = false,
 		lsp_saga = true,
 		gitsigns = true,
 		notify = true,
