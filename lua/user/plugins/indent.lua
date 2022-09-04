@@ -1,8 +1,14 @@
 vim.opt.list = false
+-- vim.opt.listchars:append("space:⋅")
+-- vim.opt.listchars:append("eol:↴")
+
 require("indent_blankline").setup({
-	-- char = '¦',
 	filetype_exclude = { "NvimTree", "packer", "lsp-installer", "help" },
-	show_end_of_line = true,
-	show_current_context = false,
-	show_current_context_start = false,
+	-- space_char_blankline = " ",
+	char = "▎",
+	show_trailing_blankline_indent = false,
+	show_first_indent_level = true,
+	show_end_of_line = false,
+	show_current_context = true,
+	show_current_context_start = true,
 })
