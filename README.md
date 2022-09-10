@@ -33,7 +33,6 @@ This configuration is heavily inspired by [chrisatmachine](https://github.com/Ch
   - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
   - [impatient.nvim](https://github.com/lewis6991/impatient.nvim)
   - [JABS.nvim](https://github.com/matbme/JABS.nvim)
-  - [lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim)
   - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
   - [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
   - [nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)

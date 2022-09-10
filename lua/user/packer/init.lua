@@ -29,7 +29,6 @@ return require("packer").startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use("folke/which-key.nvim")
 	use("famiu/bufdelete.nvim") -- Only used in which-key
-	use("ggandor/lightspeed.nvim")
 	use("matbme/JABS.nvim")
 	use("folke/zen-mode.nvim")
 	use("folke/twilight.nvim")
