@@ -1,5 +1,5 @@
 require("fidget").setup({
 	window = {
-		blend = 100,
+		blend = 0,
 	},
 })
