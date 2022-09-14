@@ -34,10 +34,13 @@ require("catppuccin").setup({
 		notify = true,
 		indent_blankline = {
 			enabled = true,
-			colored_indent_levels = true,
+			colored_indent_levels = false,
 		},
 		bufferline = true,
 		ts_rainbow = true,
+		navic = {
+			enabled = true,
+		},
 	},
 })
 
