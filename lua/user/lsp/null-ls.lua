@@ -35,6 +35,9 @@ require("null-ls").setup({
 		formatting.black,
 		-- diagnostics.flake8,
 		formatting.djlint,
+		-- formatting.djlint.with({
+		-- 	extra_args = { "--format-css", "--format-js" },
+		-- }),
 		diagnostics.djlint,
 		-- Lua
 		formatting.stylua,
