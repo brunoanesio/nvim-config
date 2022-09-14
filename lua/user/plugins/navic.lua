@@ -1,4 +1,4 @@
-vim.g.navic_silence = true
+vim.g.navic_silence = false
 require("nvim-navic").setup({
 	icons = {
 		File = " ",

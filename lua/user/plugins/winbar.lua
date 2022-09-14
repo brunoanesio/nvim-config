@@ -28,6 +28,6 @@ M.winbar_filetype_exclude = {
 	"",
 }
 
-vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+vim.o.winbar = "%Y %t %M %{%v:lua.require'nvim-navic'.get_location()%}"
 
 return M
