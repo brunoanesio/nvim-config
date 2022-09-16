@@ -31,7 +31,9 @@ end
 require("null-ls").setup({
 	sources = {
 		-- Python and Django
-		formatting.isort,
+		formatting.isort.with({
+			extra_args = { "--profile black" },
+		}),
 		formatting.black,
 		-- diagnostics.flake8,
 		formatting.djlint,
