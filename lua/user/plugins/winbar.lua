@@ -110,7 +110,7 @@ M.get_winbar = function()
 	end
 
 	if not isempty(value) and get_buf_option("mod") then
-		local mod = "%#LspCodeLens#" .. "" .. "%*"
+		local mod = "%#LspCodeLens#" .. "[+]" .. "%*"
 		if gps_added then
 			value = value .. " " .. mod
 		else
