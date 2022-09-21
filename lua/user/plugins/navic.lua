@@ -16,6 +16,6 @@ require("nvim-navic").setup({
 		Operator = " ",
 	},
 	highlight = true,
-	-- separator = " ",
-	separator = " > ",
+	-- separator = " > ",
+	separator = "  ",
 })
