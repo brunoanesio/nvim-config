@@ -33,7 +33,7 @@ require("lualine").setup({
 		},
 		-- lualine_c = { "filename", { navic.get_location, cond = navic.is_available }, "diagnostics" },
 		lualine_c = { "filename", "diagnostics" },
-		lualine_x = { { lsp_server, icon = " :", separator = { right = "" } }, "filetype" },
+		lualine_x = { { lsp_server, icon = " :" }, "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { { "location", separator = { right = "" } } },
 	},
