@@ -1,6 +1,6 @@
 local options = {
 	syntax = "on",
-	cmdheight = 0,
+	cmdheight = 1,
 	showmode = false,
 	expandtab = true,
 	shiftwidth = 4,
