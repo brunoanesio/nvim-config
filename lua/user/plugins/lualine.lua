@@ -14,11 +14,9 @@ local function lsp_server()
 	return msg
 end
 
--- local navic = require("nvim-navic")
-
 require("lualine").setup({
 	options = {
-		component_separators = { left = "|", right = "|" },
+		component_separators = "", -- │
 		section_separators = { left = "", right = "" },
 		theme = "catppuccin",
 		disabled_filetypes = { "alpha" },
@@ -26,16 +24,15 @@ require("lualine").setup({
 		globalstatus = true,
 	},
 	sections = {
-		lualine_a = { { "mode", separator = { left = "" } } },
+		lualine_a = { "mode" },
 		lualine_b = {
-			{ "branch", separator = { right = "" } },
+			"branch",
 			{ "diff", symbols = { added = " ", modified = "柳", removed = " " } },
 		},
-		-- lualine_c = { "filename", { navic.get_location, cond = navic.is_available }, "diagnostics" },
 		lualine_c = { "filename", "diagnostics" },
 		lualine_x = { { lsp_server, icon = " :" }, "filetype" },
 		lualine_y = { "progress" },
-		lualine_z = { { "location", separator = { right = "" } } },
+		lualine_z = { "location" },
 	},
 	extensions = { "nvim-tree", "toggleterm", "neo-tree" },
 })
