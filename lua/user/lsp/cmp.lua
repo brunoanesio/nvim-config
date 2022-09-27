@@ -111,9 +111,9 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	formatting = {
-		fields = { "kind", "abbr" },
+		fields = { "abbr", "kind" },
 		format = function(_, vim_item)
-			vim_item.kind = kind_icons[vim_item.kind] or ""
+			vim_item.kind = (kind_icons[vim_item.kind] or "") .. vim_item.kind
 			return vim_item
 		end,
 	},
