@@ -13,13 +13,22 @@ saga.init_lsp_saga({
 		enable = true,
 		enable_in_insert = false,
 	},
+	symbol_in_winbar = {
+		enable = false,
+		separator = "  ",
+		show_file = true,
+		in_custom = false,
+	},
+	show_outline = {
+		win_width = 35,
+	},
 })
 
 -- Mappings
 -- Lsp finder
 map("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
 -- Code action
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+map({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
 -- Rename
 map("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
 -- Definition preview
@@ -40,5 +49,3 @@ end, { silent = true })
 map("n", "<leader>ol", "<cmd>LSoutlineToggle<CR>", opts)
 -- Hover
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
--- Signature Help
-map("n", "gs", "<cmd>Lspsaga signature_help<CR>", opts)
