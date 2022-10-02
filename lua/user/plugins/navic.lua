@@ -29,6 +29,6 @@ require("nvim-navic").setup({
 		TypeParameter = " ",
 	},
 	highlight = true,
-	-- separator = " > ",
-	separator = "  ",
+	separator = "  ",
+	-- separator = "  ",
 })
