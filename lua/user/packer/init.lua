@@ -18,13 +18,11 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- Misc
 	use("kyazdani42/nvim-web-devicons")
-	-- use("andweeb/presence.nvim")
 	use("folke/todo-comments.nvim")
 	use("stevearc/dressing.nvim")
 	use("nvim-lualine/lualine.nvim")
 	use("SmiteshP/nvim-navic")
 	use("ahmedkhalf/project.nvim")
-	-- use({ "nvim-neorg/neorg", tag = "*" })
 	-- QoL
 	use("lewis6991/impatient.nvim")
 	use("folke/which-key.nvim")
