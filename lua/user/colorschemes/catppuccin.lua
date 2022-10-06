@@ -4,6 +4,7 @@ local colors = require("catppuccin.palettes").get_palette()
 require("catppuccin").setup({
 	term_colors = false,
 	transparent_background = false,
+	compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
 	styles = {
 		comments = { "italic" },
 		conditionals = { "italic" },
@@ -17,11 +18,6 @@ require("catppuccin").setup({
 		properties = {},
 		types = {},
 		operators = {},
-	},
-	compile = {
-		enabled = true,
-		path = vim.fn.stdpath("cache") .. "/catppuccin",
-		suffix = "_compiled",
 	},
 	integrations = {
 		dashboard = true,
@@ -46,5 +42,4 @@ require("catppuccin").setup({
 		which_key = true,
 	},
 })
-
-vim.cmd([[colorscheme catppuccin]])
+vim.api.nvim_command("colorscheme catppuccin")
