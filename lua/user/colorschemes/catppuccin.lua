@@ -1,5 +1,5 @@
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-local colors = require("catppuccin.palettes").get_palette()
+-- local colors = require("catppuccin.palettes").get_palette()
 
 require("catppuccin").setup({
 	term_colors = false,
@@ -32,7 +32,7 @@ require("catppuccin").setup({
 		lsp_saga = false,
 		navic = {
 			enabled = true,
-			custom_bg = colors.base,
+			-- custom_bg = colors.base,
 		},
 		notify = true,
 		nvimtree = false,
