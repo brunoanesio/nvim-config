@@ -27,12 +27,13 @@ require("lualine").setup({
 		lualine_a = { "mode" },
 		lualine_b = {
 			"branch",
-			{ "diff", symbols = { added = " ", modified = "柳", removed = " " } },
+			{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
 		},
-		lualine_c = { "filename", "diagnostics" },
-		lualine_x = { { lsp_server, icon = " :" }, "filetype" },
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		lualine_c = { "filename" },
+		lualine_x = {},
+		-- lualine_x = { "encoding", "filesize" },
+		lualine_y = { { lsp_server, icon = " :" }, "diagnostics" },
+		lualine_z = { "location", "progress" },
 	},
 	extensions = { "nvim-tree", "toggleterm", "neo-tree" },
 })
