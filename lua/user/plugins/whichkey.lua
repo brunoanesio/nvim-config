@@ -80,7 +80,7 @@ local mappings = {
 		b = { "<cmd>JABSOpen<cr>", "See open buffers" },
 		n = { "<cmd>bnext<cr>", "Next Buffer" },
 		p = { "<cmd>bprevious<cr>", "Prev Buffer" },
-		k = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+		k = { "<cmd>bdelete!<CR>", "Close Buffer" },
 		B = { "<cmd>Telescope buffers<cr>", "Change Buffer" },
 	},
 
