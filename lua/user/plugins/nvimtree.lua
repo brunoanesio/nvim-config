@@ -47,7 +47,7 @@ require("nvim-tree").setup({
 		icons = {
 			hint = "",
 			info = "",
-			warning = "",
+			warning = "",
 			error = "",
 		},
 	},
