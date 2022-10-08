@@ -29,7 +29,6 @@ require("feline").setup({
 	force_inactive = {
 		filetypes = {
 			"^NvimTree$",
-			"^alpha$",
 			"^packer$",
 			"^startify$",
 			"^fugitive$",
@@ -41,5 +40,10 @@ require("feline").setup({
 			"^terminal$",
 		},
 		bufnames = {},
+	},
+	disable = {
+		filetypes = {
+			"^alpha$",
+		},
 	},
 })
