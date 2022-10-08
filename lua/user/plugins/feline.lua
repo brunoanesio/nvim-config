@@ -5,7 +5,7 @@ ctp_feline.setup({
 		left_separator = "",
 		right_separator = "",
 		bar = "█",
-		mode_icon = "",
+		mode_icon = " ",
 		dir = "  ",
 		file = "   ",
 		lsp = {
@@ -26,4 +26,20 @@ ctp_feline.setup({
 
 require("feline").setup({
 	components = ctp_feline.get(),
+	force_inactive = {
+		filetypes = {
+			"^NvimTree$",
+			"^alpha$",
+			"^packer$",
+			"^startify$",
+			"^fugitive$",
+			"^fugitiveblame$",
+			"^qf$",
+			"^help$",
+		},
+		buftypes = {
+			"^terminal$",
+		},
+		bufnames = {},
+	},
 })
