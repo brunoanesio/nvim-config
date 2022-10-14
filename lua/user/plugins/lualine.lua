@@ -30,10 +30,9 @@ require("lualine").setup({
 			{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
 		},
 		lualine_c = { "filename" },
-		lualine_x = {},
-		-- lualine_x = { "encoding", "filesize" },
-		lualine_y = { { lsp_server, icon = " :" }, "diagnostics" },
-		lualine_z = { "location", "progress" },
+		lualine_x = { { lsp_server }, "diagnostics" },
+		lualine_y = { "filetype", "progress" },
+		lualine_z = { "location" },
 	},
 	extensions = { "nvim-tree", "toggleterm", "neo-tree" },
 })
