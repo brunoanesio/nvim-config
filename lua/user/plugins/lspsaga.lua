@@ -12,6 +12,7 @@ saga.init_lsp_saga({
 	code_action_lightbulb = {
 		enable = true,
 		enable_in_insert = false,
+		sign = true,
 	},
 	symbol_in_winbar = {
 		enable = false,
@@ -32,7 +33,7 @@ map({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
 -- Rename
 map("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
 -- Definition preview
-map("n", "gd", "<cmd>Lspsaga preview_definition<CR>", opts)
+map("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
 -- Show line and cursor diagnostics
 map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "gL", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
