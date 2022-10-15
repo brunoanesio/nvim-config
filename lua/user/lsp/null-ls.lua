@@ -37,9 +37,6 @@ require("null-ls").setup({
 		formatting.black,
 		-- diagnostics.flake8,
 		formatting.djlint,
-		-- formatting.djlint.with({
-		-- 	extra_args = { "--format-css", "--format-js" },
-		-- }),
 		diagnostics.djlint,
 		-- Lua
 		formatting.stylua,
@@ -50,8 +47,6 @@ require("null-ls").setup({
 		-- Shell
 		formatting.shfmt,
 		-- diagnostics.shellcheck,
-		-- Rust
-		-- formatting.rustfmt,
 	},
 	on_attach = on_attach,
 })
