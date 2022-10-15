@@ -1,15 +1,18 @@
-vim.api.nvim_create_augroup("bufcheck", { clear = true })
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+local bufcheck = augroup("bufcheck", {})
+local yank_group = augroup("HighlightYank", {})
 -- highlight yanks
-vim.api.nvim_create_autocmd("TextYankPost", {
-	group = "bufcheck",
+autocmd("TextYankPost", {
+	group = yank_group,
 	pattern = "*",
 	callback = function()
-		vim.highlight.on_yank({ timeout = 500 })
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 150 })
 	end,
 })
 -- start git messages in insert mode
-vim.api.nvim_create_autocmd("FileType", {
-	group = "bufcheck",
+autocmd("FileType", {
+	group = bufcheck,
 	pattern = { "gitcommit", "gitrebase" },
 	command = "startinsert | 1",
 })
