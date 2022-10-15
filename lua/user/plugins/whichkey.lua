@@ -173,7 +173,6 @@ local mappings = {
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		m = { "<cmd>Telescope marks<cr>", "Marks" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		p = { "<cmd>Telescope projects<cr>", "Projects" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 	},
 

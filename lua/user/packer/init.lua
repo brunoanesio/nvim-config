@@ -23,7 +23,6 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("feline-nvim/feline.nvim")
 	use("SmiteshP/nvim-navic")
-	use("ahmedkhalf/project.nvim")
 	-- QoL
 	use("lewis6991/impatient.nvim")
 	use("folke/which-key.nvim")
@@ -70,7 +69,7 @@ return require("packer").startup(function(use)
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		"jose-elias-alvarez/typescript.nvim",
+		-- "jose-elias-alvarez/typescript.nvim",
 		"simrat39/rust-tools.nvim",
 		-- CMP
 		"hrsh7th/nvim-cmp",
