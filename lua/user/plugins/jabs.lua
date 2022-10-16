@@ -23,5 +23,5 @@ require("jabs").setup({
 	},
 
 	-- Icons next to filenames
-	use_devicons = true,
+	use_devicons = false,
 })

@@ -4,6 +4,13 @@ require("telescope").setup({
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
+		layout_strategy = "horizontal",
+		layout_config = {
+			prompt_position = "top",
+			width = 0.9,
+			preview_width = 0.6,
+			preview_cutoff = 80,
+		},
 	},
 	mappings = {
 		i = {
@@ -25,6 +32,7 @@ require("telescope").setup({
 			["<C-s>"] = actions.select_horizontal,
 			["<C-v>"] = actions.select_vertical,
 			["<C-t>"] = actions.select_tab,
+			["<C-d>"] = actions.delete_buffer,
 
 			["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 			["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
@@ -59,9 +67,6 @@ require("telescope").setup({
 			["<Up>"] = actions.move_selection_previous,
 			["gg"] = actions.move_to_top,
 			["G"] = actions.move_to_bottom,
-
-			["<C-u>"] = actions.preview_scrolling_up,
-			["<C-d>"] = actions.preview_scrolling_down,
 
 			["<PageUp>"] = actions.results_scrolling_up,
 			["<PageDown>"] = actions.results_scrolling_down,
