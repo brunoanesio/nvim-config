@@ -1,18 +1,38 @@
 local actions = require("telescope.actions")
 require("telescope").setup({
+	pickers = {
+		find_files = {
+			previewer = false,
+		},
+		buffers = {
+			theme = "dropdown",
+			initial_mode = "normal",
+			previewer = false,
+			mappings = {
+				i = {
+					["<C-d>"] = require("telescope.actions").delete_buffer,
+				},
+				n = {
+					["dd"] = require("telescope.actions").delete_buffer,
+				},
+			},
+		},
+	},
 	defaults = {
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
 		layout_strategy = "horizontal",
 		layout_config = {
+			center = {
+				prompt_position = "top",
+			},
 			prompt_position = "bottom",
 			width = 0.8,
-			preview_width = 0.6,
 			preview_cutoff = 40,
 		},
 		preview = {
-			hide_on_startup = true,
+			hide_on_startup = false,
 		},
 		mappings = {
 			i = {
@@ -22,8 +42,8 @@ require("telescope").setup({
 				["<C-n>"] = actions.move_selection_next,
 				["<C-p>"] = actions.move_selection_previous,
 
-				["<C-b>"] = actions.results_scrolling_up,
-				["<C-f>"] = actions.results_scrolling_down,
+				["<C-b>"] = actions.preview_scrolling_up,
+				["<C-f>"] = actions.preview_scrolling_down,
 
 				["<C-c>"] = actions.close,
 
@@ -34,14 +54,12 @@ require("telescope").setup({
 				["<C-s>"] = actions.select_horizontal,
 				["<C-v>"] = actions.select_vertical,
 				["<C-t>"] = actions.select_tab,
-				["<C-d>"] = require("telescope.actions").delete_buffer,
 
 				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 				["<C-l>"] = actions.complete_tag,
 				["<C-h>"] = actions.which_key,
-				["<esc>"] = actions.close,
-				["<C-x>"] = require("telescope.actions.layout").toggle_preview,
+				["<C-o>"] = require("telescope.actions.layout").toggle_preview,
 			},
 			n = {
 				["<CR>"] = actions.select_default,
@@ -61,7 +79,6 @@ require("telescope").setup({
 				["M"] = actions.move_to_middle,
 				["L"] = actions.move_to_bottom,
 				["q"] = actions.close,
-				["dd"] = require("telescope.actions").delete_buffer,
 				["s"] = actions.select_horizontal,
 				["v"] = actions.select_vertical,
 				["t"] = actions.select_tab,
