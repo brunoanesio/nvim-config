@@ -21,24 +21,21 @@ return require("packer").startup(function(use)
 	use("folke/todo-comments.nvim")
 	use("stevearc/dressing.nvim")
 	use("nvim-lualine/lualine.nvim")
-	use("feline-nvim/feline.nvim")
 	use("SmiteshP/nvim-navic")
 	-- QoL
 	use("lewis6991/impatient.nvim")
+	use("famiu/bufdelete.nvim")
 	use("folke/which-key.nvim")
 	use("matbme/JABS.nvim")
-	-- use("folke/zen-mode.nvim")
-	-- use("folke/twilight.nvim")
 	use("RRethy/vim-illuminate")
 	use("brenoprata10/nvim-highlight-colors")
 	use("kylechui/nvim-surround")
-	use("declancm/cinnamon.nvim")
+	use("karb94/neoscroll.nvim")
 	use("rmagatti/auto-session")
 	use("rmagatti/session-lens")
 	use("davidgranstrom/nvim-markdown-preview")
 
 	-- Colorschemes
-	-- use("monsonjeremy/onedark.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin", run = ":CatppuccinCompile" })
 	-- IDE features
 	use("kyazdani42/nvim-tree.lua")
@@ -69,7 +66,7 @@ return require("packer").startup(function(use)
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		-- "jose-elias-alvarez/typescript.nvim",
+		"jose-elias-alvarez/typescript.nvim",
 		"simrat39/rust-tools.nvim",
 		-- CMP
 		"hrsh7th/nvim-cmp",
