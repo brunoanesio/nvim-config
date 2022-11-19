@@ -23,6 +23,7 @@ saga.init_lsp_saga({
 	show_outline = {
 		win_width = 35,
 	},
+	custom_kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
 })
 
 -- Mappings
