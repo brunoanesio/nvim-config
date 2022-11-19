@@ -1,10 +1,9 @@
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 -- local colors = require("catppuccin.palettes").get_palette()
 
 require("catppuccin").setup({
+	flavour = "mocha",
 	term_colors = false,
 	transparent_background = false,
-	compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
 	styles = {
 		comments = { "italic" },
 		conditionals = { "italic" },
@@ -30,12 +29,30 @@ require("catppuccin").setup({
 		},
 		lightspeed = true,
 		lsp_saga = false,
+		cmp = true,
 		navic = {
 			enabled = true,
-			-- custom_bg = colors.base,
+			custom_bg = "NONE",
+		},
+		native_lsp = {
+			enabled = true,
+			virtual_text = {
+				errors = { "italic" },
+				hints = { "italic" },
+				warnings = { "italic" },
+				information = { "italic" },
+			},
+			underlines = {
+				errors = { "underline" },
+				hints = { "underline" },
+				warnings = { "underline" },
+				information = { "underline" },
+			},
 		},
 		notify = true,
-		nvimtree = false,
+		mason = true,
+		-- nvimtree = false,
+		telescope = true,
 		treesitter = true,
 		treesitter_context = true,
 		ts_rainbow = true,
