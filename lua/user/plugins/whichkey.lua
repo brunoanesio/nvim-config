@@ -68,7 +68,7 @@ local opts = {
 }
 
 local mappings = {
-	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+	["d"] = { "<cmd>Dashboard<cr>", "Dashboard" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	[" "] = { "<cmd>Telescope find_files<CR>", "Find File" },
 	["."] = { "<cmd>Telescope file_browser<CR>", "Browse files" },

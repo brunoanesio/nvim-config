@@ -1,9 +1,10 @@
-local status_ok, db = pcall(require, "dashboard")
+local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
 	return
 end
 
-db.custom_header = {
+local dashboard = require("alpha.themes.dashboard")
+dashboard.section.header.val = {
 	[[                                                                   ]],
 	[[                                                                   ]],
 	[[ ██████   █████                                ███                 ]],
@@ -17,11 +18,25 @@ db.custom_header = {
 	[[                                                                   ]],
 	[[                                                                   ]],
 }
-db.custom_center = {
-	{ icon = " ", desc = "New file                         ", action = "Telescope find_files" },
-	{ icon = " ", desc = "Find file                        ", action = "enew" },
-	{ icon = " ", desc = "Recently used files              ", action = "Telescope oldfiles" },
-	{ icon = " ", desc = "Configuration                    ", action = "cd ~/.config/nvim | e $MYVIMRC" },
-	{ icon = " ", desc = "Update plugins                   ", action = "PackerSync" },
-	{ icon = " ", desc = "Quit Neovim                      ", action = "qa" },
+dashboard.section.buttons.val = {
+	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
+	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
+	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR> | :cd ~/.config/nvim <CR>"),
+	dashboard.button("u", "  Update plugins", ":PackerSync<CR>"),
+	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
+dashboard.opts.opts.noautocmd = true
+local function footer()
+	local datetime = os.date(" %d-%m-%Y ")
+	local version = vim.version()
+	local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
+	local nvim_version_info = "   Neovim v" .. version.major .. "." .. version.minor .. "." .. version.patch
+
+	return datetime .. "  " .. plugins_count .. " plugins" .. nvim_version_info
+end
+
+dashboard.section.footer.val = footer()
+dashboard.section.footer.opts.hl = "AlphaFooter"
+alpha.setup(dashboard.opts)
