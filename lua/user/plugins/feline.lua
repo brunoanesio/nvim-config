@@ -44,6 +44,7 @@ require("feline").setup({
 	disable = {
 		filetypes = {
 			"^alpha$",
+			"^dashboard$",
 		},
 	},
 })

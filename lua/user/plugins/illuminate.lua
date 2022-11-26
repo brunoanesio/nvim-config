@@ -9,6 +9,7 @@ require("illuminate").configure({
 		"dirvish",
 		"fugitive",
 		"alpha",
+		"dashboard",
 		"NvimTree",
 		"Toggleterm",
 		"DressingSelect",

@@ -19,7 +19,7 @@ require("lualine").setup({
 		component_separators = "", -- │
 		section_separators = { left = "", right = "" },
 		theme = "catppuccin",
-		disabled_filetypes = { "alpha" },
+		disabled_filetypes = { "alpha", "dashboard" },
 		always_divide_middle = true,
 		globalstatus = true,
 	},
