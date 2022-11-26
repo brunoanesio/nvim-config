@@ -18,10 +18,10 @@ db.custom_header = {
 	[[                                                                   ]],
 }
 db.custom_center = {
-	{ icon = " ", desc = "New file                         ", action = "Telescope find_files" },
-	{ icon = " ", desc = "Find file                        ", action = "enew" },
-	{ icon = " ", desc = "Recently used files              ", action = "Telescope oldfiles" },
-	{ icon = " ", desc = "Configuration                    ", action = "cd ~/.config/nvim | e $MYVIMRC" },
-	{ icon = " ", desc = "Update plugins                   ", action = "PackerSync" },
-	{ icon = " ", desc = "Quit Neovim                      ", action = "qa" },
+	{ icon = " ", desc = "New file                         ", shortcut = "SPC f f",action = "Telescope find_files" },
+	{ icon = " ", desc = "Find file                        ", shortcut = "SPC f n", action = "enew" },
+	{ icon = " ", desc = "Recently used files              ", shortcut = "SPC f r", action = "Telescope oldfiles" },
+	{ icon = " ", desc = "Configuration                    ", shortcut = "SPC f c", action = "cd ~/.config/nvim | e $MYVIMRC" },
+	{ icon = " ", desc = "Update plugins                   ", shortcut = "SPC p u", action = "PackerSync" },
+	{ icon = " ", desc = "Quit Neovim                      ", shortcut = "SPC q q", action = "qa" },
 }

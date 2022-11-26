@@ -68,7 +68,6 @@ local opts = {
 }
 
 local mappings = {
-	["d"] = { "<cmd>Dashboard<cr>", "Dashboard" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	[" "] = { "<cmd>Telescope find_files<CR>", "Find File" },
 	["."] = { "<cmd>Telescope file_browser<CR>", "Browse files" },
@@ -89,6 +88,7 @@ local mappings = {
 		F = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer Find" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
+		c = { "<cmd>cd ~/.config/nvim | e $MYVIMRC<CR>", "Edit config" },
 		g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
 		n = { "<cmd>enew<cr>", "New file" },
 		s = { "<cmd>w!<CR>", "Save" },
