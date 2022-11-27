@@ -51,7 +51,7 @@ require("catppuccin").setup({
 		},
 		notify = true,
 		mason = true,
-		-- nvimtree = false,
+		nvimtree = false,
 		telescope = true,
 		treesitter = true,
 		treesitter_context = true,
