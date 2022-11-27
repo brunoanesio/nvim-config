@@ -3,6 +3,7 @@ require("telescope").setup({
 	pickers = {
 		find_files = {
 			previewer = false,
+			hidden = true,
 		},
 		buffers = {
 			theme = "dropdown",
@@ -19,6 +20,7 @@ require("telescope").setup({
 		},
 	},
 	defaults = {
+		hidden = true,
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
