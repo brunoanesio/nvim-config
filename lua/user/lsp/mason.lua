@@ -3,6 +3,7 @@ local tools = {
 	"black",
 	"css-lsp",
 	"djlint",
+	"eslint_d",
 	"emmet-ls",
 	"flake8",
 	"html-lsp",

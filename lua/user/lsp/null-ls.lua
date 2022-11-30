@@ -42,8 +42,8 @@ require("null-ls").setup({
 		formatting.stylua,
 		-- JS, TS
 		formatting.prettier,
-		-- diagnostics.eslint,
-		code_actions.eslint,
+		-- diagnostics.eslint_d,
+		code_actions.eslint_d,
 		-- Shell
 		formatting.shfmt,
 		-- diagnostics.shellcheck,
