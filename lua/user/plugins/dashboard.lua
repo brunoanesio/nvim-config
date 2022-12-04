@@ -25,3 +25,6 @@ db.custom_center = {
 	{ icon = " ", desc = "Update plugins                   ", shortcut = "SPC p u", action = "PackerSync" },
 	{ icon = " ", desc = "Quit Neovim                      ", shortcut = "SPC q q", action = "qa" },
 }
+db.hide_statusline = true
+db.hide_tabline = true
+db.hide_winbar = true
