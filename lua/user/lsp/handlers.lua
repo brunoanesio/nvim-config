@@ -1,13 +1,9 @@
 local M = {}
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
 	return
 end
-M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
 	-- LSP UI config
@@ -29,22 +25,6 @@ M.setup = function()
 end
 
 local function lsp_keymaps(bufnr)
-	-- Diagnostic float
-	-- vim.api.nvim_create_autocmd("CursorHold", {
-	-- 	buffer = bufnr,
-	-- 	callback = function()
-	-- 		local opts = {
-	-- 			focusable = false,
-	-- 			close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-	-- 			border = "rounded",
-	-- 			source = "always",
-	-- 			prefix = " ",
-	-- 			scope = "cursor",
-	-- 		}
-	-- 		vim.diagnostic.open_float(nil, opts)
-	-- 	end,
-	-- })
-
 	-- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -92,5 +72,7 @@ M.on_attach = function(client, bufnr)
 		require("nvim-navic").attach(client, bufnr)
 	end
 end
+
+M.capabilities = cmp_nvim_lsp.default_capabilities()
 
 return M
