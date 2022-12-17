@@ -1,6 +1,6 @@
 local options = {
 	syntax = "on",
-	cmdheight = 1,
+	cmdheight = 0,
 	showmode = false,
 	expandtab = true,
 	shiftwidth = 4,
@@ -29,6 +29,7 @@ local options = {
 	completeopt = { "menu", "menuone", "noselect" },
 	guifont = "Iosevka Mayukai Codepro:h14",
 	laststatus = 3,
+	fillchars = "eob: ",
 }
 
 vim.notify = require("notify")
