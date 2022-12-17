@@ -1,5 +1,6 @@
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
+		"help",
 		"python",
 		"lua",
 		"javascript",
@@ -14,6 +15,7 @@ require("nvim-treesitter.configs").setup({
 	},
 
 	sync_install = false,
+	auto_install = true,
 
 	highlight = {
 		enable = true,
