@@ -30,6 +30,7 @@ local options = {
 	guifont = "Iosevka Mayukai Codepro:h14",
 	laststatus = 3,
 	fillchars = "eob: ",
+	undofile = true,
 }
 
 vim.notify = require("notify")
