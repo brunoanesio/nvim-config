@@ -26,9 +26,21 @@ map("n", "<C-Up>", ":resize -2<CR>", opts)
 map("n", "<C-Down>", ":resize +2<CR>", opts)
 map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
--- Stay in visual mode
+-- Visual mappings
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
+map("v", "J", ":m '>+1<CR>gv=gv", opts)
+map("v", "K", ":m '<-2<CR>gv=gv", opts)
+-- Normal mappings
+map("n", "J", "mzJ`z", opts)
+-- paste remap
+map("x", "<leader>p", '"_dP')
+-- clipboard
+map("n", "<leader>y", '"+y')
+map("v", "<leader>y", '"+y')
+map("n", "<leader>Y", '"+Y')
+map("n", "<leader>d", '"_d')
+map("v", "<leader>d", '"_d')
 -- Illuminate
 map("n", "<a-n>", '<cmd>lua require"illuminate".goto_next_reference()<cr>', opts)
 map("n", "<a-p>", '<cmd>lua require"illuminate".goto_prev_reference()<cr>', opts)
