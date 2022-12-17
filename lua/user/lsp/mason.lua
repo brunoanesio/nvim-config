@@ -10,7 +10,6 @@ local tools = {
 	"isort",
 	"json-lsp",
 	"lua-language-server",
-	"marksman",
 	"prettier",
 	"python-lsp-server",
 	"rust-analyzer",
