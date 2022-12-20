@@ -3,7 +3,7 @@
 require("catppuccin").setup({
 	flavour = "mocha",
 	term_colors = false,
-	transparent_background = false,
+	transparent_background = true,
 	styles = {
 		comments = { "italic" },
 		conditionals = { "italic" },
