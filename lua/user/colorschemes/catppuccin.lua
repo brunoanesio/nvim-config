@@ -3,7 +3,8 @@
 require("catppuccin").setup({
 	flavour = "mocha",
 	term_colors = false,
-	transparent_background = true,
+	transparent_background = false,
+	no_italic = true,
 	styles = {
 		comments = {},
 		conditionals = {},
@@ -28,7 +29,7 @@ require("catppuccin").setup({
 			colored_indent_levels = false,
 		},
 		lightspeed = true,
-		lsp_saga = false,
+		lsp_saga = true,
 		cmp = true,
 		navic = {
 			enabled = true,
@@ -51,7 +52,7 @@ require("catppuccin").setup({
 		},
 		notify = true,
 		mason = true,
-		nvimtree = false,
+		nvimtree = true,
 		telescope = true,
 		treesitter = true,
 		treesitter_context = true,
