@@ -1,4 +1,4 @@
 require("notify").setup({
 	-- for transparent background
-	background_colour = "#000000",
+	-- background_colour = "#000000",
 })

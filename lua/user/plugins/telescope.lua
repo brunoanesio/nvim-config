@@ -7,7 +7,7 @@ require("telescope").setup({
 		},
 		buffers = {
 			theme = "dropdown",
-			initial_mode = "normal",
+			initial_mode = "insert",
 			previewer = false,
 			mappings = {
 				i = {

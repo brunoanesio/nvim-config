@@ -3,7 +3,8 @@ local map = vim.keymap.set
 -- Config
 require("lspsaga").setup({
 	symbol_in_winbar = {
-		enable = false,
+		enable = true,
+		separator = "  ",
 	},
 	ui = {
 		border = "rounded",
