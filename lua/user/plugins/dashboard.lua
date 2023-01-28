@@ -3,28 +3,86 @@ if not status_ok then
 	return
 end
 
-db.custom_header = {
-	[[                                                                   ]],
-	[[                                                                   ]],
-	[[ ██████   █████                                ███                 ]],
-	[[░░██████ ░░███                                ░░░                  ]],
-	[[ ░███░███ ░███   ██████   ██████  █████ █████ ████  █████████████  ]],
-	[[ ░███░░███░███  ███░░███ ███░░███░░███ ░░███ ░░███ ░░███░░███░░███ ]],
-	[[ ░███ ░░██████ ░███████ ░███ ░███ ░███  ░███  ░███  ░███ ░███ ░███ ]],
-	[[ ░███  ░░█████ ░███░░░  ░███ ░███ ░░███ ███   ░███  ░███ ░███ ░███ ]],
-	[[ █████  ░░█████░░██████ ░░██████   ░░█████    █████ █████░███ █████]],
-	[[░░░░░    ░░░░░  ░░░░░░   ░░░░░░     ░░░░░    ░░░░░ ░░░░░ ░░░ ░░░░░ ]],
-	[[                                                                   ]],
-	[[                                                                   ]],
-}
-db.custom_center = {
-	{ icon = " ", desc = "New file                         ", shortcut = "SPC f f",action = "Telescope find_files" },
-	{ icon = " ", desc = "Find file                        ", shortcut = "SPC f n", action = "enew" },
-	{ icon = " ", desc = "Recently used files              ", shortcut = "SPC f r", action = "Telescope oldfiles" },
-	{ icon = " ", desc = "Configuration                    ", shortcut = "SPC f c", action = "cd ~/.config/nvim | e $MYVIMRC" },
-	{ icon = " ", desc = "Update plugins                   ", shortcut = "SPC p u", action = "PackerSync" },
-	{ icon = " ", desc = "Quit Neovim                      ", shortcut = "SPC q q", action = "qa" },
-}
-db.hide_statusline = true
-db.hide_tabline = true
-db.hide_winbar = true
+db.setup({
+	theme = "doom",
+	config = {
+		header = {
+			[[                                                                   ]],
+			[[                                                                   ]],
+			[[                                                                   ]],
+			[[ ██████   █████                                ███                 ]],
+			[[░░██████ ░░███                                ░░░                  ]],
+			[[ ░███░███ ░███   ██████   ██████  █████ █████ ████  █████████████  ]],
+			[[ ░███░░███░███  ███░░███ ███░░███░░███ ░░███ ░░███ ░░███░░███░░███ ]],
+			[[ ░███ ░░██████ ░███████ ░███ ░███ ░███  ░███  ░███  ░███ ░███ ░███ ]],
+			[[ ░███  ░░█████ ░███░░░  ░███ ░███ ░░███ ███   ░███  ░███ ░███ ░███ ]],
+			[[ █████  ░░█████░░██████ ░░██████   ░░█████    █████ █████░███ █████]],
+			[[░░░░░    ░░░░░  ░░░░░░   ░░░░░░     ░░░░░    ░░░░░ ░░░░░ ░░░ ░░░░░ ]],
+			[[                                                                   ]],
+			[[                                                                   ]],
+			[[                                                                   ]],
+		},
+		center = {
+			{
+				icon = "   ",
+				icon_hi = "Title",
+				desc = "New File                                            ",
+				desc_hi = "String",
+				key = "n",
+				key_hi = "Constant",
+				keymap = "SPC f n",
+				action = "enew",
+			},
+			{
+				icon = "   ",
+				icon_hi = "Title",
+				desc = "Find File                                           ",
+				desc_hi = "String",
+				key = "f",
+				key_hi = "Constant",
+				keymap = "SPC f f",
+				action = "Telescope find_files",
+			},
+			{
+				icon = "   ",
+				icon_hi = "Title",
+				desc = "Recent Files                                        ",
+				desc_hi = "String",
+				key = "r",
+				key_hi = "Constant",
+				keymap = "SPC f r",
+				action = "Telescope oldfiles",
+			},
+			{
+				icon = "   ",
+				icon_hi = "Title",
+				desc = "Configuration                                       ",
+				desc_hi = "String",
+				key = "c",
+				key_hi = "Number",
+				keymap = "SPC f c",
+				action = "cd ~/.config/nvim | e $MYVIMRC",
+			},
+			{
+				icon = "   ",
+				icon_hi = "Title",
+				desc = "Update Plugins                                      ",
+				desc_hi = "String",
+				key = "u",
+				key_hi = "Constant",
+				keymap = "SPC p u",
+				action = "PackerSync",
+			},
+			{
+				icon = "   ",
+				icon_hi = "Title",
+				desc = "Quit Neovim                                         ",
+				desc_hi = "String",
+				key = "q",
+				key_hi = "Constant",
+				keymap = "SPC q q",
+				action = "qa",
+			},
+		},
+	},
+})
