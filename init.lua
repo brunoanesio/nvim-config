@@ -1,31 +1,21 @@
-require("user.packer")
-require("user.colorschemes.catppuccin")
-require("user.plugins.impatient")
-require("user.autocommands")
-require("user.mappings")
-require("user.settings")
-require("user.lsp")
-require("user.plugins.autopairs")
-require("user.plugins.colorizer")
-require("user.plugins.comment")
-require("user.plugins.dashboard")
-require("user.plugins.dressing")
-require("user.plugins.fidget")
-require("user.plugins.gitsigns")
-require("user.plugins.illuminate")
-require("user.plugins.indent")
-require("user.plugins.lspsaga")
-require("user.plugins.lualine")
-require("user.plugins.navic")
-require("user.plugins.neoclip")
-require("user.plugins.neoscroll")
-require("user.plugins.notify")
-require("user.plugins.nvimtree")
-require("user.plugins.session")
-require("user.plugins.surround")
-require("user.plugins.telescope")
-require("user.plugins.todo")
-require("user.plugins.toggleterm")
-require("user.plugins.treesitter")
-require("user.plugins.whichkey")
-require("user.plugins.rust")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("config.mappings")
+require("config.options")
+require("config.autocommands")
+require("lazy").setup("plugins", {
+	install = { colorscheme = { "catppuccin" } },
+	-- defaults = { lazy = true },
+	ui = { border = "rounded" },
+})
