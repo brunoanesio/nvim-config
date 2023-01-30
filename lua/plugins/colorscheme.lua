@@ -54,6 +54,7 @@ return {
 							information = { "underline" },
 						},
 					},
+					noice = true,
 					notify = true,
 					mason = true,
 					nvimtree = true,

@@ -20,13 +20,11 @@ return {
 				lualine_c = { "filename" },
 				lualine_x = {
 					{ "diagnostics", symbols = { error = "✖ ", warn = "! ", info = " ", hint = " " } },
+					{ require("lazy.status").updates, cond = require("lazy.status").has_updates },
 					"filetype",
 				},
 				lualine_y = { "progress" },
-				lualine_z = {
-					{ require("lazy.status").updates, cond = require("lazy.status").has_updates },
-					"location",
-				},
+				lualine_z = { "location" },
 			},
 			extensions = { "nvim-tree", "toggleterm", "neo-tree" },
 		},
