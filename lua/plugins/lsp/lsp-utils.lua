@@ -38,6 +38,7 @@ M.setup = function()
 	end
 end
 
+---@diagnostic disable-next-line: unused-local
 M.on_attach = function(client, bufnr)
 	-- Set up buffer-local keymaps (vim.api.nvim_buf_set_keymap()), etc.
 	local function buf_set_keymap(...)
