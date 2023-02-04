@@ -15,7 +15,7 @@ return {
 				lualine_a = { "mode" },
 				lualine_b = {
 					"branch",
-					{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
+					{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
 				},
 				lualine_c = { "filename" },
 				lualine_x = {
