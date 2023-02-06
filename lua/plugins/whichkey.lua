@@ -126,7 +126,7 @@ return {
 					k = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
 					K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
 					d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to definition" },
-					r = { "<cmd>Telescope lsp_references()<cr>", "References" },
+					r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
 					s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 					S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 					q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
@@ -160,10 +160,10 @@ return {
 
 				t = {
 					name = "Telescope",
+					r = { "<cmd>Telescope lsp_references<cr>", "References" },
 					s = { "<cmd>Telescope symbols<cr>", "Symbols" },
 					S = { "<cmd>Telescope search_history<cr>", "Search History" },
-					C = { "<cmd>Telescope commands<cr>", "Commands History" },
-					c = { "<cmd>Telescope neoclip<cr>", "Neoclip" },
+					c = { "<cmd>Telescope commands<cr>", "Commands History" },
 					n = { "<cmd>Telescope notify<cr>", "Show notifications" },
 					h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 					m = { "<cmd>Telescope marks<cr>", "Marks" },
