@@ -1,7 +1,8 @@
 return {
 	{
 		"folke/which-key.nvim",
-		event = "VeryLazy",
+		cmd = "WhichKey",
+		keys = { "<space>", desc = "WhichKey" },
 		config = function()
 			local wk = require("which-key")
 			local setup = {
@@ -98,7 +99,6 @@ return {
 
 				g = {
 					name = "Git",
-					g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
 					j = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
 					k = { "<cmd>Gitsigns prev_hunk<cr>", "Prev Hunk" },
 					l = { "<cmd>Gitsigns blame_line<cr>", "Blame" },
@@ -134,11 +134,7 @@ return {
 
 				o = {
 					name = "Open",
-					N = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-					H = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-					p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-					t = { "<cmd>ToggleTerm direction=float<cr>", "Floating Terminal" },
-					T = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal Terminal" },
+					t = { "<cmd>Lspsaga term_toggle<cr>", "Toggle Terminal" },
 					x = { "<cmd>!xdg-open %<CR>", "Open file with XDG-Open" },
 					m = { "<cmd>MarkdownPreview<CR>", "Open Markdown Preview" },
 				},

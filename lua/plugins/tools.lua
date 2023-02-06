@@ -11,9 +11,6 @@ return {
 		opts = {
 			auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
 		},
-		config = function(_, opts)
-			require("auto-session").setup(opts)
-		end,
 	},
 
 	{
@@ -55,33 +52,18 @@ return {
 				kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
 			},
 		},
-		config = function(_, opts)
-			require("lspsaga").setup(opts)
-			-- Mappings
-			-- Lsp finder
-			vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
-			-- Code action
-			vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
-			-- Rename
-			vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>")
-			-- Definition preview
-			vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
-			-- Show line and cursor diagnostics
-			vim.keymap.set("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>")
-			vim.keymap.set("n", "gL", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
-			-- Diagnostic jump
-			vim.keymap.set("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
-			vim.keymap.set("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
-			vim.keymap.set("n", "[E", function()
-				require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
-			end, { silent = true })
-			vim.keymap.set("n", "]E", function()
-				require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
-			end, { silent = true })
-			-- Outline
-			vim.keymap.set("n", "<leader>ol", "<cmd>LSoutlineToggle<CR>")
-			-- Hover
-			vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
-		end,
+		keys = {
+			{ "gh", "<cmd>Lspsaga lsp_finder<CR>", desc = "Lspsaga lsp finder" },
+			{ "<leader>ca", "<cmd>Lspsaga code_action<CR>", desc = "Lspsaga Code Action" },
+			{ "gr", "<cmd>Lspsaga rename<CR>", desc = "Lspsaga rename" },
+			{ "gR", "<cmd>Lspsaga rename ++project<CR>", desc = "Lspsaga rename project" },
+			{ "gd", "<cmd>Lspsaga peek_definition<CR>", desc = "Lspsaga peek definition" },
+			{ "gD", "<cmd>Lspsaga goto_definition<CR>", desc = "Goto definition" },
+			{ "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Lspsaga show line diagnostics" },
+			{ "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Goto next diagnostic" },
+			{ "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Goto prev diagnostic" },
+			{ "<leader>ol", "<cmd>Lspsaga outline<CR>", desc = "Lspsaga outline" },
+			{ "K", "<cmd>Lspsaga hover_doc<CR>", desc = "Lspsaga hover" },
+		},
 	},
 }
