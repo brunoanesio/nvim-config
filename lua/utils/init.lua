@@ -1,6 +1,6 @@
 local M = {}
 
-M.lsp_signs = { Error = "✖ ", Warn = "! ", Hint = " ", Info = " " }
+M.lsp_signs = { Error = " ", Warn = "! ", Hint = " ", Info = " " }
 
 M.cmp_kinds = {
 	Text = " ",
