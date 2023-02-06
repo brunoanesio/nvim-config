@@ -24,6 +24,7 @@ return {
 					operators = {},
 				},
 				integrations = {
+					cmp = true,
 					dashboard = true,
 					fidget = true,
 					gitsigns = true,
@@ -34,11 +35,8 @@ return {
 					},
 					lightspeed = true,
 					lsp_saga = true,
-					cmp = true,
-					navic = {
-						enabled = true,
-						custom_bg = "NONE",
-					},
+					mason = true,
+					markdown = true,
 					native_lsp = {
 						enabled = true,
 						virtual_text = {
@@ -56,11 +54,9 @@ return {
 					},
 					noice = true,
 					notify = true,
-					mason = true,
 					nvimtree = true,
 					telescope = true,
 					treesitter = true,
-					treesitter_context = true,
 					ts_rainbow = true,
 					which_key = true,
 				},
