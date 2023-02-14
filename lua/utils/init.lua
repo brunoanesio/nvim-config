@@ -55,7 +55,7 @@ M.mason_packages = {
 
 M.lsp_servers = {
 	"tsserver",
-	"sumneko_lua",
+	"lua_ls",
 	"bashls",
 	"jsonls",
 	"cssls",

@@ -26,8 +26,8 @@ return {
 					})
 				end,
 
-				["sumneko_lua"] = function()
-					lspconfig.sumneko_lua.setup({
+				["lua_ls"] = function()
+					lspconfig.lua_ls.setup({
 						settings = {
 							Lua = {
 								diagnostics = {
