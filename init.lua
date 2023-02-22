@@ -16,6 +16,5 @@ require("config.options")
 require("config.autocommands")
 require("lazy").setup("plugins", {
 	install = { colorscheme = { "catppuccin" } },
-	-- defaults = { lazy = true },
 	ui = { border = "rounded" },
 })
