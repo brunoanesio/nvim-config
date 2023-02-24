@@ -48,7 +48,7 @@ return {
 		event = "BufReadPost",
 		opts = {
 			filetype_exclude = { "NvimTree", "packer", "lsp-installer", "help" },
-			char = "▎",
+			-- char = "▎",
 			show_trailing_blankline_indent = false,
 			show_first_indent_level = true,
 			show_end_of_line = false,
