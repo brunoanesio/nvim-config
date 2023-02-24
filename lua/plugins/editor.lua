@@ -9,6 +9,11 @@ return {
 	},
 
 	{
+		"dkarter/bullets.vim",
+		ft = "markdown",
+	},
+
+	{
 		"folke/zen-mode.nvim",
 		cmd = "ZenMode",
 		keys = { { "<leader>tz", "<cmd>ZenMode<CR>", desc = "Toggle ZenMode" } },
