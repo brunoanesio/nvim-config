@@ -6,7 +6,7 @@ return {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-refactor",
 			"windwp/nvim-ts-autotag",
-			"p00f/nvim-ts-rainbow",
+			"HiPhish/nvim-ts-rainbow2",
 		},
 		opts = {
 			ensure_installed = {
@@ -55,16 +55,6 @@ return {
 			},
 			rainbow = {
 				enable = true,
-				-- One Dark colors
-				-- colors = {
-				-- 	"#e06c75",
-				-- 	"#98c379",
-				-- 	"#ebd09c",
-				-- 	"#61afef",
-				-- 	"#c678dd",
-				-- 	"#56b6c2",
-				-- 	"#798294",
-				-- },
 			},
 		},
 		config = function(_, opts)
