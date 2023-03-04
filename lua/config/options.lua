@@ -31,6 +31,7 @@ local options = {
 	laststatus = 3,
 	fillchars = "eob: ",
 	undofile = true,
+	sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions",
 }
 
 vim.opt.shortmess:append("c")

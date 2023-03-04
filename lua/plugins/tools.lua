@@ -10,6 +10,7 @@ return {
 		"rmagatti/auto-session",
 		opts = {
 			auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
+			log_level = "info",
 		},
 	},
 
@@ -50,12 +51,20 @@ return {
 				code_action = "",
 				kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
 			},
+			lightbulb = {
+				enable = true,
+				virtual_text = false,
+			},
+			beacon = {
+				enable = true,
+				frequency = 7,
+			},
 		},
 		keys = {
 			{ "gh", "<cmd>Lspsaga lsp_finder<CR>", desc = "Lspsaga lsp finder" },
 			{ "<leader>ca", "<cmd>Lspsaga code_action<CR>", desc = "Lspsaga Code Action" },
 			{ "gr", "<cmd>Lspsaga rename<CR>", desc = "Lspsaga rename" },
-			{ "gR", "<cmd>Lspsaga rename ++project<CR>", desc = "Lspsaga rename project" },
+			{ "gR", "<cmd>Lspsaga rename ++project<CR>", desc = "Lspsaga rename ++project" },
 			{ "gd", "<cmd>Lspsaga peek_definition<CR>", desc = "Lspsaga peek definition" },
 			{ "gD", "<cmd>Lspsaga goto_definition<CR>", desc = "Goto definition" },
 			{ "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Lspsaga show line diagnostics" },
