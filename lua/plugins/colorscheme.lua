@@ -10,6 +10,7 @@ return {
 				term_colors = false,
 				transparent_background = false,
 				no_italic = true,
+				show_end_of_buffer = false,
 				styles = {
 					comments = {},
 					conditionals = {},
@@ -27,7 +28,6 @@ return {
 				integrations = {
 					cmp = true,
 					dashboard = true,
-					fidget = true,
 					gitsigns = true,
 					illuminate = true,
 					indent_blankline = {

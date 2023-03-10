@@ -152,7 +152,6 @@ return {
 
 			nls.setup({
 				sources = {
-					-- Python and Django
 					formatting.isort.with({ extra_args = { "--profile black" } }),
 					formatting.black.with({ extra_args = { "--fast" } }),
 					formatting.djlint,

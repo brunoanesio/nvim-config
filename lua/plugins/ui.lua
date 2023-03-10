@@ -70,7 +70,7 @@ return {
 
 	{
 		"stevearc/dressing.nvim",
-		event = "BufRead",
+		-- event = "BufRead",
 		opts = {
 			input = {
 				win_options = {
