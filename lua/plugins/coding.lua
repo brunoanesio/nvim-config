@@ -30,6 +30,7 @@ return {
 			local kind_icons = require("utils").cmp_kinds
 
 			local cmp = require("cmp")
+			local compare = cmp.config.compare
 			local luasnip = require("luasnip")
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			cmp.setup({
@@ -80,11 +81,20 @@ return {
 					}),
 				},
 				sources = {
-					{ name = "nvim_lsp" },
+					{ name = "jupynium", priority = 1000 },
+					{ name = "nvim_lsp", priority = 100 },
 					{ name = "nvim_lua" },
 					{ name = "luasnip" },
 					{ name = "buffer" },
 					{ name = "path" },
+				},
+				sorting = {
+					priority_weight = 1.0,
+					comparators = {
+						compare.score,
+						compare.recently_used,
+						compare.locality,
+					},
 				},
 				confirm_opts = {
 					behavior = cmp.ConfirmBehavior.Replace,
