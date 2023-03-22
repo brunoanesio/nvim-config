@@ -59,6 +59,18 @@ return {
 									rope_completion = {
 										enabled = false,
 									},
+									pycodestyle = {
+										enabled = false,
+									},
+									pyflakes = {
+										enabled = false,
+									},
+									pylint = {
+										enabled = false,
+									},
+									mccabe = {
+										enabled = false,
+									},
 								},
 							},
 						},
@@ -146,6 +158,7 @@ return {
 					})
 				end
 			end
+
 			local formatting = nls.builtins.formatting
 			local diagnostics = nls.builtins.diagnostics
 			local code_actions = nls.builtins.code_actions
@@ -154,12 +167,13 @@ return {
 				sources = {
 					formatting.isort.with({ extra_args = { "--profile black" } }),
 					formatting.black.with({ extra_args = { "--fast" } }),
-					formatting.djlint,
+					-- diagnostics.ruff,
 					diagnostics.djlint,
+					formatting.djlint,
 					formatting.stylua,
 					formatting.prettier,
-					code_actions.eslint_d,
 					formatting.shfmt,
+					code_actions.eslint_d,
 				},
 				on_attach = on_attach,
 			})
