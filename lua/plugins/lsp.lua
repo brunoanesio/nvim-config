@@ -59,6 +59,9 @@ return {
 									rope_completion = {
 										enabled = false,
 									},
+									rope_autoimport = {
+										enabled = true,
+									},
 									pycodestyle = {
 										enabled = false,
 									},
@@ -105,6 +108,8 @@ return {
 
 	{
 		"williamboman/mason.nvim",
+		cmd = "Mason",
+		keys = { { "<leader>li", "<cmd>Mason<CR>", desc = "Mason" } },
 		opts = {
 			pip = {
 				upgrade_pip = true,

@@ -44,10 +44,15 @@ return {
 		build = "conda run --no-capture-output -n jupynium pip install .",
 		enabled = vim.fn.isdirectory(vim.fn.expand("~/.local/share/miniconda3/envs/jupynium")),
 		-- ft = "ju.py",
-		cmd = "JupyniumStartAndAttachToServer",
+		-- cmd = "JupyniumStartAndAttachToServer",
+		-- keys = {
+		-- 	{ "<leader>x", "<cmd>JupyniumExecuteSelectedCells<CR>", desc = "Execute selected cells" },
+		-- 	{ "<leader>K", "<cmd>JupyniumKernelHover<CR>", desc = "See value like LSP hover" },
+		-- },
 		opts = {
 			-- python_host = vim.g.python3_host_prog or "python3",
 			python_host = { "conda", "run", "--no-capture-output", "-n", "jupynium", "python" },
+			use_default_keybindings = true,
 		},
 	},
 
