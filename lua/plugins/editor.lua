@@ -100,7 +100,6 @@ return {
 		opts = {
 			update_cwd = true,
 			respect_buf_cwd = true,
-			open_on_setup = false,
 			open_on_tab = false,
 			sync_root_with_cwd = true,
 			update_focused_file = {
