@@ -1,16 +1,32 @@
 return {
 	{
-		"kylechui/nvim-surround",
-		config = function()
-			require("nvim-surround").setup()
-		end,
-	},
-
-	{
-		"rmagatti/auto-session",
+		"folke/persistence.nvim",
+		event = "BufReadPre",
 		opts = {
-			auto_session_suppress_dirs = { "~/", "~/Downloads", "/" },
-			log_level = "info",
+			options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals" },
+		},
+		keys = {
+			{
+				"<leader>qs",
+				function()
+					require("persistence").load()
+				end,
+				desc = "Restore Session",
+			},
+			{
+				"<leader>ql",
+				function()
+					require("persistence").load({ last = true })
+				end,
+				desc = "Restore Last Session",
+			},
+			{
+				"<leader>qd",
+				function()
+					require("persistence").stop()
+				end,
+				desc = "Don't Save Current Session",
+			},
 		},
 	},
 
@@ -36,23 +52,6 @@ return {
 			}
 			rt.setup(opts)
 		end,
-	},
-
-	{
-		"kiyoon/jupynium.nvim",
-		build = "conda run --no-capture-output -n jupynium pip install .",
-		enabled = vim.fn.isdirectory(vim.fn.expand("~/.local/share/miniconda3/envs/jupynium")),
-		-- ft = "ju.py",
-		-- cmd = "JupyniumStartAndAttachToServer",
-		-- keys = {
-		-- 	{ "<leader>x", "<cmd>JupyniumExecuteSelectedCells<CR>", desc = "Execute selected cells" },
-		-- 	{ "<leader>K", "<cmd>JupyniumKernelHover<CR>", desc = "See value like LSP hover" },
-		-- },
-		opts = {
-			-- python_host = vim.g.python3_host_prog or "python3",
-			python_host = { "conda", "run", "--no-capture-output", "-n", "jupynium", "python" },
-			use_default_keybindings = true,
-		},
 	},
 
 	{
@@ -89,6 +88,7 @@ return {
 			{ "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Goto prev diagnostic" },
 			{ "<leader>ol", "<cmd>Lspsaga outline<CR>", desc = "Lspsaga outline" },
 			{ "K", "<cmd>Lspsaga hover_doc<CR>", desc = "Lspsaga hover" },
+			{ "<A-t>", "<cmd>Lspsaga term_toggle<CR>", desc = "Lspsaga Floating Term" },
 		},
 	},
 }

@@ -46,6 +46,7 @@ M.mason_packages = {
 	"python-lsp-server",
 	"rust-analyzer",
 	"ruff",
+    "ruff-lsp",
 	"shellcheck",
 	"shfmt",
 	"stylua",

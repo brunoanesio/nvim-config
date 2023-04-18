@@ -16,6 +16,10 @@ return {
 						previewer = false,
 						hidden = false,
 					},
+					current_buffer_fuzzy_find = {
+						theme = "dropdown",
+						previewer = false,
+					},
 					buffers = {
 						theme = "dropdown",
 						initial_mode = "normal",

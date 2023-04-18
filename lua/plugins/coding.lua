@@ -12,7 +12,8 @@ return {
 
 	{
 		"hrsh7th/nvim-cmp",
-		event = "BufReadPre",
+		version = false,
+		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lsp",
@@ -20,7 +21,6 @@ return {
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
 		},
-
 		config = function()
 			local check_backspace = function()
 				local col = vim.fn.col(".") - 1
@@ -32,9 +32,7 @@ return {
 			local cmp = require("cmp")
 			local compare = cmp.config.compare
 			local luasnip = require("luasnip")
-			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			cmp.setup({
-				cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done()),
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
@@ -81,8 +79,7 @@ return {
 					}),
 				},
 				sources = {
-					{ name = "jupynium", priority = 1000 },
-					{ name = "nvim_lsp", priority = 100 },
+					{ name = "nvim_lsp" },
 					{ name = "nvim_lua" },
 					{ name = "luasnip" },
 					{ name = "buffer" },
@@ -115,6 +112,37 @@ return {
 					ghost_text = true,
 				},
 			})
+		end,
+	},
+
+	{
+		"echasnovski/mini.surround",
+		config = function(_, opts)
+			require("mini.surround").setup(opts)
+		end,
+	},
+
+	{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+	{
+		"echasnovski/mini.comment",
+		event = "VeryLazy",
+		opts = {
+			hooks = {
+				pre = function()
+					require("ts_context_commentstring.internal").update_commentstring({})
+				end,
+			},
+		},
+		config = function(_, opts)
+			require("mini.comment").setup(opts)
+		end,
+	},
+
+	{
+		"echasnovski/mini.pairs",
+		event = "VeryLazy",
+		config = function(_, opts)
+			require("mini.pairs").setup(opts)
 		end,
 	},
 

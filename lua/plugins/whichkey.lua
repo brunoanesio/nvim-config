@@ -70,11 +70,11 @@ return {
 			}
 
 			local mappings = {
-				["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+				["e"] = { "<cmd>NeoTreeFocusToggle<cr>", "Explorer" },
 				[" "] = { "<cmd>Telescope find_files<CR>", "Find File" },
 				["."] = { "<cmd>Telescope file_browser<CR>", "Browse files" },
 				[","] = { "<cmd>Telescope buffers<CR>", "Change buffer" },
-
+				["v"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer Find" },
 				b = {
 					name = "Buffer",
 					b = { "<cmd>Telescope buffers<cr>", "See open buffers" },
@@ -83,11 +83,10 @@ return {
 					k = { "<cmd>Bdelete<CR>", "Close Buffer" },
 					B = { "<cmd>Telescope buffers<cr>", "Change Buffer" },
 				},
-
 				f = {
 					name = "File",
 					f = { "<cmd>Telescope find_files<cr>", "Find Files" },
-					F = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer Find" },
+					v = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer Find" },
 					r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 					b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
 					c = { "<cmd>cd ~/.config/nvim | e $MYVIMRC<CR>", "Edit config" },
@@ -96,7 +95,6 @@ return {
 					s = { "<cmd>w!<CR>", "Save" },
 					S = { "<cmd>source %<CR>", "Source current file" },
 				},
-
 				g = {
 					name = "Git",
 					j = { "<cmd>Gitsigns next_hunk<cr>", "Next Hunk" },
@@ -114,7 +112,6 @@ return {
 					c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 					d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 				},
-
 				l = {
 					name = "LSP",
 					a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -131,14 +128,11 @@ return {
 					S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 					q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 				},
-
 				o = {
 					name = "Open",
-					t = { "<cmd>Lspsaga term_toggle<cr>", "Toggle Terminal" },
 					x = { "<cmd>!xdg-open %<CR>", "Open file with XDG-Open" },
 					m = { "<cmd>MarkdownPreview<CR>", "Open Markdown Preview" },
 				},
-
 				p = {
 					name = "Plugins",
 					p = { "<cmd>Lazy<cr>", "Lazy" },
@@ -147,13 +141,14 @@ return {
 					c = { "<cmd>Lazy check<cr>", "Check" },
 					h = { "<cmd>Lazy health<cr>", "Lazy Health" },
 				},
-
 				q = {
-					name = "Quit",
+					name = "Quit/Session",
 					q = { "<cmd>q!<CR>", "Quit" },
 					x = { "<cmd>x!<CR>", "Save and quit" },
+					s = { "<cmd>lua require('persistence').load()<CR>", "Restore Session" },
+					l = { "<cmd>lua require('persistence').load({ last = true })<CR>", "Restore Last Session" },
+					d = { "<cmd>lua require('persistence').stop()<CR>", "Don't Save Current Session" },
 				},
-
 				t = {
 					name = "Telescope",
 					r = { "<cmd>Telescope lsp_references<cr>", "References" },
@@ -166,7 +161,6 @@ return {
 					M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 					k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 				},
-
 				w = {
 					name = "Window",
 					w = { "<C-w>w", "Switch window" },

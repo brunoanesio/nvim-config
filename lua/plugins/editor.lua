@@ -9,37 +9,8 @@ return {
 	},
 
 	{
-		"numToStr/Comment.nvim",
-		event = "BufReadPre",
-		opts = {
-			padding = true,
-			sticky = true,
-			ignore = nil,
-			toggler = {
-				line = "gcc",
-				block = "gbc",
-			},
-			opleader = {
-				line = "gc",
-				block = "gb",
-			},
-			extra = {
-				above = "gcO",
-				below = "gco",
-				eol = "gcA",
-			},
-			mappings = {
-				basic = true,
-				extra = true,
-			},
-			pre_hook = nil,
-			post_hook = nil,
-		},
-	},
-
-	{
 		"RRethy/vim-illuminate",
-		event = "BufReadPost",
+		event = { "BufReadPost", "BufNewFile" },
 		opts = {
 			providers = {
 				"lsp",
@@ -63,10 +34,10 @@ return {
 		},
 		config = function(_, opts)
 			require("illuminate").configure(opts)
+			vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+			vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
+			vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
 		end,
-		vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" }),
-		vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" }),
-		vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" }),
 	},
 
 	{
@@ -92,64 +63,20 @@ return {
 	},
 
 	{
-		"kyazdani42/nvim-tree.lua",
-		cmd = "NvimTreeToggle",
+		"nvim-neo-tree/neo-tree.nvim",
+		cmd = "NeoTreeFocusToggle",
 		keys = {
-			{ "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
+			{ "<leader>e", "<cmd>NeoTreeFocusToggle<CR>", desc = "Toggle NeoTree" },
 		},
 		opts = {
-			update_cwd = true,
-			respect_buf_cwd = true,
-			open_on_tab = false,
-			sync_root_with_cwd = true,
-			update_focused_file = {
-				enable = true,
-				update_cwd = true,
+			filesystem = {
+				follow_current_file = true,
 			},
-			view = {
-				width = 40,
-			},
-			renderer = {
-				highlight_git = true,
-				indent_markers = {
-					enable = true,
-					icons = {
-						corner = "└ ",
-						edge = "│ ",
-						item = "│ ",
-						none = "  ",
-					},
-				},
-				icons = {
-					glyphs = {
-						git = {
-							unstaged = "",
-							staged = "",
-							unmerged = "",
-							renamed = "",
-							untracked = "",
-							deleted = "",
-							ignored = "",
-						},
-					},
-				},
-			},
-			git = {
-				enable = true,
-				ignore = false,
-				show_on_dirs = true,
-				timeout = 400,
-			},
-			diagnostics = {
-				enable = true,
-				icons = {
-					hint = "",
-					info = " ",
-					warning = "!",
-					error = "✖",
+			window = {
+				mappings = {
+					["o"] = "open",
 				},
 			},
 		},
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
 }

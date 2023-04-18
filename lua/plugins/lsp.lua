@@ -1,7 +1,7 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-		event = "BufReadPre",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"williamboman/mason-lspconfig.nvim",
@@ -25,7 +25,6 @@ return {
 						capabilities = lsp_utils.capabilities,
 					})
 				end,
-
 				["lua_ls"] = function()
 					lspconfig.lua_ls.setup({
 						settings = {
@@ -55,6 +54,15 @@ return {
 									flake8 = {
 										enabled = false,
 										maxLineLength = 95,
+									},
+									autopep8 = {
+										enabled = false,
+									},
+									black = {
+										enabled = true,
+									},
+									ruff = {
+										enabled = true,
 									},
 									rope_completion = {
 										enabled = false,
@@ -139,7 +147,7 @@ return {
 
 	{
 		"jose-elias-alvarez/null-ls.nvim",
-		event = "BufReadPre",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local nls = require("null-ls")
 			local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -172,7 +180,7 @@ return {
 				sources = {
 					formatting.isort.with({ extra_args = { "--profile black" } }),
 					formatting.black.with({ extra_args = { "--fast" } }),
-					-- diagnostics.ruff,
+					diagnostics.ruff,
 					diagnostics.djlint,
 					formatting.djlint,
 					formatting.stylua,

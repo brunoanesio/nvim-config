@@ -2,7 +2,8 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = "BufReadPost",
+		version = false,
+		event = { "BufReadPost", "BufNewFile" },
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-refactor",
 			"windwp/nvim-ts-autotag",
@@ -55,6 +56,10 @@ return {
 			},
 			rainbow = {
 				enable = true,
+			},
+			context_commenstring = {
+				enable = true,
+				enable_autocmd = false,
 			},
 		},
 		config = function(_, opts)
