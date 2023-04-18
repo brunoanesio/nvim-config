@@ -30,13 +30,10 @@ return {
 					dashboard = true,
 					gitsigns = true,
 					illuminate = true,
-					indent_blankline = {
-						enabled = true,
-						colored_indent_levels = false,
-					},
 					lsp_saga = true,
 					mason = true,
 					markdown = true,
+					mini = true,
 					native_lsp = {
 						enabled = true,
 						virtual_text = {
