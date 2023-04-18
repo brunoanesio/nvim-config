@@ -31,17 +31,44 @@ return {
 	},
 
 	{
-		"lukas-reineke/indent-blankline.nvim",
+		"echasnovski/mini.indentscope",
 		event = "BufReadPost",
 		opts = {
-			filetype_exclude = { "NvimTree", "packer", "lsp-installer", "help" },
-			-- char = "▎",
-			show_trailing_blankline_indent = false,
-			show_first_indent_level = true,
-			show_end_of_line = false,
-			show_current_context = true,
-			show_current_context_start = false,
+			symbol = "▏",
+			-- symbol = "│",
+			-- symbol = "▎",
+			options = { try_as_border = true },
 		},
+		init = function()
+			vim.api.nvim_create_autocmd("Filetype", {
+				pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+				callback = function()
+					vim.b.miniindentscope_disable = true
+				end,
+			})
+		end,
+		config = function(_, opts)
+			require("mini.indentscope").setup(opts)
+		end,
+	},
+
+	{
+		"echasnovski/mini.animate",
+		event = "BufReadPost",
+		opts = {
+			resize = {
+				enable = false,
+			},
+			open = {
+				enable = false,
+			},
+			close = {
+				enable = false,
+			},
+		},
+		config = function(_, opts)
+			require("mini.animate").setup(opts)
+		end,
 	},
 
 	{

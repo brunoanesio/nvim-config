@@ -87,11 +87,6 @@ return {
 						},
 					})
 				end,
-				["tsserver"] = function()
-					require("typescript").setup({
-						disable_formatting = true,
-					})
-				end,
 				["emmet_ls"] = function()
 					lspconfig.emmet_ls.setup({
 						filetypes = { "html", "htmldjango", "css", "typescriptreact", "javascriptreact" },
