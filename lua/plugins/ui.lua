@@ -34,9 +34,9 @@ return {
 		"echasnovski/mini.indentscope",
 		event = "BufReadPost",
 		opts = {
-			symbol = "▏",
+			-- symbol = "▏",
 			-- symbol = "│",
-			-- symbol = "▎",
+			symbol = "▎",
 			options = { try_as_border = true },
 		},
 		init = function()

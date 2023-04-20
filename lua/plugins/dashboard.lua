@@ -21,6 +21,18 @@ return {
 				},
 				center = {
 					{
+						icon = "   ",
+						icon_hl = "Title",
+						desc = "Restore Session                                      ",
+						desc_hl = "String",
+						key = "s",
+						key_hl = "Constant",
+						keymap = "SPC q s",
+						action = function()
+							vim.cmd("lua require('persistence').load()")
+						end,
+					},
+					{
 						icon = "   ",
 						icon_hl = "Title",
 						desc = "New File                                            ",
@@ -31,7 +43,7 @@ return {
 						action = "enew",
 					},
 					{
-						icon = "   ",
+						icon = "   ",
 						icon_hl = "Title",
 						desc = "Find File                                           ",
 						desc_hl = "String",
@@ -56,19 +68,19 @@ return {
 						desc = "Configuration                                       ",
 						desc_hl = "String",
 						key = "c",
-						key_hl = "Number",
+						key_hl = "Constant",
 						keymap = "SPC f c",
 						action = "cd ~/.config/nvim | e $MYVIMRC",
 					},
 					{
-						icon = "   ",
+						icon = "󰒲   ",
 						icon_hl = "Title",
-						desc = "Sync Plugins                                        ",
+						desc = "Lazy                                                ",
 						desc_hl = "String",
-						key = "s",
+						key = "l",
 						key_hl = "Constant",
-						keymap = "SPC p s",
-						action = "Lazy sync",
+						keymap = "SPC p l",
+						action = "Lazy",
 					},
 					{
 						icon = "   ",

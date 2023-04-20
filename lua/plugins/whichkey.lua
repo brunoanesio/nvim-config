@@ -135,7 +135,7 @@ return {
 				},
 				p = {
 					name = "Plugins",
-					p = { "<cmd>Lazy<cr>", "Lazy" },
+					l = { "<cmd>Lazy<cr>", "Lazy" },
 					s = { "<cmd>Lazy sync<cr>", "Sync" },
 					u = { "<cmd>Lazy update<cr>", "Update" },
 					c = { "<cmd>Lazy check<cr>", "Check" },
