@@ -40,41 +40,43 @@ return {
 		end,
 	},
 
-	-- {
-	-- 	"karb94/neoscroll.nvim",
-	-- 	opts = {
-	-- 		mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
-	-- 		hide_cursor = true,
-	-- 		stop_eof = true,
-	-- 		respect_scrolloff = true,
-	-- 		cursor_scrolls_alone = false,
-	-- 		performance_mode = false,
-	-- 	},
-	-- 	config = function(_, opts)
-	-- 		require("neoscroll").setup(opts)
-	--
-	-- 		local t = {}
-	--
-	-- 		t["<c-p>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
-	-- 		t["<c-n>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
-	--
-	-- 		require("neoscroll.config").set_mappings(t)
-	-- 	end,
-	-- },
-
 	{
 		"nvim-neo-tree/neo-tree.nvim",
-		cmd = "NeoTreeFocusToggle",
+		cmd = "Neotree",
 		keys = {
-			{ "<leader>e", "<cmd>NeoTreeFocusToggle<CR>", desc = "Toggle NeoTree" },
+			{
+				"<leader>fe",
+				function()
+					require("neo-tree.command").execute({ toggle = true, dir = require("utils").get_root() })
+				end,
+				desc = "Explorer NeoTree",
+			},
+			{
+				"<leader>fE",
+				function()
+					require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
+				end,
+				desc = "Exploder NeoTree (cwd)",
+			},
+			{ "<leader>e", "<leader>fe", desc = "Explorer NeoTree (root dir)", remap = true },
+			{ "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
 		},
 		opts = {
 			filesystem = {
 				follow_current_file = true,
+				use_libuv_file_watcher = true,
 			},
 			window = {
 				mappings = {
 					["o"] = "open",
+				},
+			},
+			default_component_configs = {
+				indent = {
+					with_expanders = true,
+					expander_collapsed = "",
+					expander_expanded = "",
+					expander_highlight = "NeoTreeExpander",
 				},
 			},
 		},

@@ -66,9 +66,11 @@ return {
 									},
 									rope_completion = {
 										enabled = false,
+										eager = false,
 									},
 									rope_autoimport = {
 										enabled = true,
+										memory = false,
 									},
 									pycodestyle = {
 										enabled = false,
@@ -175,7 +177,7 @@ return {
 				sources = {
 					formatting.isort.with({ extra_args = { "--profile black" } }),
 					formatting.black.with({ extra_args = { "--fast" } }),
-					diagnostics.ruff,
+					-- diagnostics.ruff,
 					diagnostics.djlint,
 					formatting.djlint,
 					formatting.stylua,

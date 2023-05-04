@@ -70,7 +70,7 @@ return {
 			}
 
 			local mappings = {
-				["e"] = { "<cmd>NeoTreeFocusToggle<cr>", "Explorer" },
+				["e"] = { "", "Explorer" },
 				[" "] = { "<cmd>Telescope find_files<CR>", "Find File" },
 				["."] = { "<cmd>Telescope file_browser<CR>", "Browse files" },
 				[","] = { "<cmd>Telescope buffers<CR>", "Change buffer" },
