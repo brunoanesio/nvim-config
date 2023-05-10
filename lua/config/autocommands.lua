@@ -7,7 +7,7 @@ autocmd("TextYankPost", {
 	group = yank_group,
 	pattern = "*",
 	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 150 })
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
 	end,
 })
 -- start git messages in insert mode
