@@ -30,7 +30,7 @@ M.setup = function()
 	})
 
 	---- sign column
-	local signs = require("utils").lsp_signs
+	local signs = require("plugins.utils").lsp_signs
 
 	for type, icon in pairs(signs) do
 		local hl = "DiagnosticSign" .. type

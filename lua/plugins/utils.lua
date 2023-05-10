@@ -97,14 +97,17 @@ function M.toggle(option, silent, values)
 		else
 			vim.opt_local[option] = values[1]
 		end
-		return require("utils").info("Set " .. option .. " to " .. vim.opt_local[option]:get(), { title = "Option" })
+		return require("plugins.utils").info(
+			"Set " .. option .. " to " .. vim.opt_local[option]:get(),
+			{ title = "Option" }
+		)
 	end
 	vim.opt_local[option] = not vim.opt_local[option]:get()
 	if not silent then
 		if vim.opt_local[option]:get() then
-			require("utils").info("Enabled " .. option, { title = "Option" })
+			require("plugins.utils").info("Enabled " .. option, { title = "Option" })
 		else
-			require("utils").warn("Disabled " .. option, { title = "Option" })
+			require("plugins.utils").warn("Disabled " .. option, { title = "Option" })
 		end
 	end
 end
@@ -113,10 +116,10 @@ function M.toggle_diagnostics()
 	M.diagnostics_active = not M.diagnostics_active
 	if M.diagnostics_active then
 		vim.diagnostic.show()
-		require("utils").info("Enabled Diagnostics", { title = "Lsp" })
+		require("plugins.utils").info("Enabled Diagnostics", { title = "Lsp" })
 	else
 		vim.diagnostic.hide()
-		require("utils").warn("Disabled Diagnostics", { title = "Lsp" })
+		require("plugins.utils").warn("Disabled Diagnostics", { title = "Lsp" })
 	end
 end
 

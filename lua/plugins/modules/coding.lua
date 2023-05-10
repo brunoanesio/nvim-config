@@ -27,7 +27,7 @@ return {
 				return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 			end
 
-			local kind_icons = require("utils").cmp_kinds
+			local kind_icons = require("plugins.utils").cmp_kinds
 
 			local cmp = require("cmp")
 			local compare = cmp.config.compare

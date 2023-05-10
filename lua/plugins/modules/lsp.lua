@@ -9,8 +9,8 @@ return {
 			"williamboman/mason-lspconfig.nvim",
 		},
 		config = function()
-			local utils = require("utils")
-			local lsp_utils = require("utils.lsp-utils")
+			local utils = require("plugins.utils")
+			local lsp_utils = require("plugins.lsp-utils")
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
 
@@ -132,7 +132,7 @@ return {
 		},
 		config = function(_, opts)
 			require("mason").setup(opts)
-			local utils = require("utils")
+			local utils = require("plugins.utils")
 			local mr = require("mason-registry")
 			local packages = utils.mason_packages
 			for _, package in ipairs(packages) do
