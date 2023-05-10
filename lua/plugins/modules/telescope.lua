@@ -11,45 +11,35 @@ return {
 		config = function()
 			local actions = require("telescope.actions")
 			require("telescope").setup({
-				pickers = {
-					find_files = {
-						previewer = false,
-						hidden = false,
-					},
-					current_buffer_fuzzy_find = {
-						theme = "dropdown",
-						previewer = false,
-					},
-					buffers = {
-						theme = "dropdown",
-						initial_mode = "normal",
-						previewer = false,
-						mappings = {
-							i = {
-								["<C-d>"] = require("telescope.actions").delete_buffer,
-							},
-							n = {
-								["dd"] = require("telescope.actions").delete_buffer,
-							},
-						},
-					},
-				},
 				defaults = {
-					hidden = false,
+					theme = "dropdown",
 					prompt_prefix = " ",
+					select_strategy = "reset",
 					selection_caret = " ",
+					sorting_strategy = "ascending",
 					path_display = { "smart" },
+					winblend = 0,
+					color_devicons = true,
+					border = {},
+					borderchars = nil,
+					set_env = { ["COLORTERM"] = "truecolor" },
 					layout_strategy = "horizontal",
 					layout_config = {
-						center = {
-							prompt_position = "top",
-						},
-						prompt_position = "bottom",
-						width = 0.8,
-						preview_cutoff = 40,
+						prompt_position = "top",
+						width = 0.75,
+						height = 0.75,
+						preview_cutoff = 120,
 					},
-					preview = {
-						hide_on_startup = false,
+					vimgrep_arguments = {
+						"rg",
+						"--color=never",
+						"--no-heading",
+						"--with-filename",
+						"--line-number",
+						"--column",
+						"--smart-case",
+						"--hidden",
+						"--glob=!.git/",
 					},
 					mappings = {
 						i = {
@@ -109,6 +99,29 @@ return {
 							["<PageDown>"] = actions.results_scrolling_down,
 
 							["?"] = actions.which_key,
+						},
+					},
+				},
+				pickers = {
+					find_files = {
+						previewer = false,
+						hidden = false,
+					},
+					current_buffer_fuzzy_find = {
+						theme = "dropdown",
+						previewer = false,
+					},
+					buffers = {
+						theme = "dropdown",
+						initial_mode = "normal",
+						previewer = false,
+						mappings = {
+							i = {
+								["<C-d>"] = require("telescope.actions").delete_buffer,
+							},
+							n = {
+								["dd"] = require("telescope.actions").delete_buffer,
+							},
 						},
 					},
 				},
