@@ -20,12 +20,18 @@ require("lazy").setup("plugins.modules", {
 		missing = true,
 	},
 	ui = {
-		border = "rounded",
+		border = "none",
+	},
+	checker = {
+		enabled = true,
+		notify = true,
 	},
 	change_detection = {
+		enabled = true,
 		notify = "false",
 	},
 	performance = {
+		cache = { enabled = true },
 		rtp = {
 			disabled_plugins = { "gzip", "tarPlugin", "tohtml", "tutor", "zipPlugin" },
 		},

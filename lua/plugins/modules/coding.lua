@@ -152,7 +152,7 @@ return {
 				delay = 250,
 			},
 			preview_config = {
-				border = "rounded",
+				border = "none",
 				style = "minimal",
 				relative = "cursor",
 				row = 0,
