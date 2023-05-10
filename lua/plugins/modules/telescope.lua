@@ -13,9 +13,9 @@ return {
 			require("telescope").setup({
 				defaults = {
 					theme = "dropdown",
-					prompt_prefix = " ",
+					prompt_prefix = "  ",
 					select_strategy = "reset",
-					selection_caret = " ",
+					selection_caret = "  ",
 					sorting_strategy = "ascending",
 					path_display = { "smart" },
 					winblend = 0,
@@ -114,6 +114,7 @@ return {
 					buffers = {
 						theme = "dropdown",
 						initial_mode = "normal",
+						prompt_prefix = "",
 						previewer = false,
 						mappings = {
 							i = {

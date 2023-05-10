@@ -4,22 +4,24 @@ return {
 		event = "VeryLazy",
 		opts = {
 			options = {
+				icons_enabled = true,
 				component_separators = "", -- │
-				section_separators = { left = "", right = "" },
+				section_separators = "",
 				theme = "catppuccin",
-				disabled_filetypes = { "alpha", "dashboard" },
+				disabled_filetypes = { statusline = { "alpha", "dashboard" } },
 				always_divide_middle = true,
 				globalstatus = true,
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = {
-					"branch",
-					{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
-				},
+				lualine_b = { "branch", "diff" },
 				lualine_c = { "filename" },
 				lualine_x = {
-					{ "diagnostics", symbols = { error = " ", warn = "! ", info = " ", hint = " " } },
+					{
+						"diagnostics",
+						sources = { "nvim_lsp" },
+						symbols = { error = " ", warn = "! ", info = " ", hint = " " },
+					},
 					{ require("lazy.status").updates, cond = require("lazy.status").has_updates },
 					"filetype",
 				},

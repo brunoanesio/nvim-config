@@ -47,6 +47,8 @@ return {
 			{ "<leader>e", "<cmd>NeoTreeFocusToggle<CR>", desc = "Toggle NeoTree", remap = true },
 		},
 		opts = {
+			close_if_last_window = true,
+			popup_border_style = "single",
 			filesystem = {
 				follow_current_file = true,
 				use_libuv_file_watcher = true,
