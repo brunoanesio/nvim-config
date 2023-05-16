@@ -109,6 +109,11 @@ return {
 						},
 					})
 				end,
+				["clangd"] = function()
+					lspconfig.clangd.setup({
+						cmd = { "clangd", "--offset-encoding=utf-16" },
+					})
+				end,
 			})
 		end,
 	},
@@ -185,6 +190,7 @@ return {
 					formatting.stylua,
 					formatting.prettier,
 					formatting.shfmt,
+					formatting.clang_format,
 					code_actions.eslint_d,
 				},
 				on_attach = on_attach,
