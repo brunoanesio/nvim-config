@@ -14,6 +14,7 @@ return {
 				defaults = {
 					theme = "dropdown",
 					prompt_prefix = "  ",
+					previewer = true,
 					select_strategy = "reset",
 					selection_caret = "  ",
 					sorting_strategy = "ascending",
@@ -107,6 +108,9 @@ return {
 						previewer = false,
 						hidden = false,
 					},
+					git_files = {
+						previewer = false,
+					},
 					current_buffer_fuzzy_find = {
 						theme = "dropdown",
 						previewer = false,
@@ -123,6 +127,32 @@ return {
 							n = {
 								["dd"] = require("telescope.actions").delete_buffer,
 							},
+						},
+					},
+					treesitter = {
+						show_line = false,
+						sorting_strategy = nil,
+						layout_config = {
+							horizontal = {
+								width = 0.9,
+								height = 0.75,
+								preview_width = 0.6,
+							},
+						},
+						symbols = {
+							"class",
+							"function",
+							"method",
+							"interface",
+							"type",
+							"const",
+							"variable",
+							"property",
+							"constructor",
+							"module",
+							"struct",
+							"trait",
+							"field",
 						},
 					},
 				},

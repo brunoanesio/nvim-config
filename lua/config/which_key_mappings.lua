@@ -5,6 +5,7 @@ return {
 	["."] = { "<cmd>Telescope file_browser<CR>", "Browse files" },
 	[","] = { "<cmd>Telescope buffers<CR>", "Change buffer" },
 	["v"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer Find" },
+	["T"] = { "<cmd>Telescope treesitter<cr>", "List Symbols" },
 	b = {
 		name = "Buffer",
 		b = { "<cmd>Telescope buffers<cr>", "See open buffers" },
@@ -82,7 +83,8 @@ return {
 	t = {
 		name = "Telescope",
 		r = { "<cmd>Telescope lsp_references<cr>", "References" },
-		s = { "<cmd>Telescope symbols<cr>", "Symbols" },
+		t = { "<cmd>Telescope treesitter<cr>", "List Symbols" },
+		s = { "<cmd>Telescope symbols<cr>", "Symbols (Emoji, icons)" },
 		S = { "<cmd>Telescope search_history<cr>", "Search History" },
 		c = { "<cmd>Telescope commands<cr>", "Commands History" },
 		n = { "<cmd>Telescope notify<cr>", "Show notifications" },

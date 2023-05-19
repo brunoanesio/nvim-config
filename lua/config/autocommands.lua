@@ -16,3 +16,10 @@ autocmd("FileType", {
 	pattern = { "gitcommit", "gitrebase" },
 	command = "startinsert | 1",
 })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(ev)
+		local opts = { buffer = ev.buf }
+		vim.keymap.set("n", "<leader>V", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts)
+	end,
+})
