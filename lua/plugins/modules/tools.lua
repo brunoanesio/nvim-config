@@ -55,11 +55,24 @@ return {
 	},
 
 	{
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		opts = {
+			theme = "catppuccin",
+		},
+	},
+
+	{
 		"glepnir/lspsaga.nvim",
 		event = "BufRead",
 		opts = {
 			symbol_in_winbar = {
-				enable = true,
+				enable = false,
 				separator = "  ",
 			},
 			ui = {

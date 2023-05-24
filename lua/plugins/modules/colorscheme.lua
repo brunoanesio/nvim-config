@@ -26,6 +26,11 @@ return {
 					operators = {},
 				},
 				integrations = {
+					barbecue = {
+						dim_dirname = true,
+						bold_basename = true,
+						dim_context = false,
+					},
 					cmp = true,
 					dashboard = true,
 					gitsigns = true,
