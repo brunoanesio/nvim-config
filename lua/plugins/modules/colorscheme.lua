@@ -71,6 +71,7 @@ return {
 						TelescopePromptTitle = { fg = colors.surface0, bg = colors.surface0 },
 						TelescopeResultsTitle = { fg = colors.mantle, bg = colors.mantle },
 						TelescopePreviewTitle = { fg = colors.crust, bg = colors.crust },
+						NeoTreeWinSeparator = { fg = colors.base, bg = colors.base },
 					}
 				end,
 			})

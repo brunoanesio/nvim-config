@@ -21,18 +21,13 @@ return {
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
 		},
-		config = function()
-			local check_backspace = function()
-				local col = vim.fn.col(".") - 1
-				return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-			end
-
-			local kind_icons = require("plugins.utils").cmp_kinds
-
+		opts = function()
 			local cmp = require("cmp")
-			local compare = cmp.config.compare
 			local luasnip = require("luasnip")
 			cmp.setup({
+				completion = {
+					completeopt = "menu,menuone,noinsert",
+				},
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
@@ -56,8 +51,6 @@ return {
 							luasnip.expand()
 						elseif luasnip.expand_or_jumpable() then
 							luasnip.expand_or_jump()
-						elseif check_backspace() then
-							fallback()
 						else
 							fallback()
 						end
@@ -85,29 +78,22 @@ return {
 					{ name = "buffer" },
 					{ name = "path" },
 				},
-				sorting = {
-					priority_weight = 1.0,
-					comparators = {
-						compare.score,
-						compare.recently_used,
-						compare.locality,
-					},
-				},
-				confirm_opts = {
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = false,
-				},
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
 				formatting = {
-					fields = { "abbr", "kind" },
-					format = function(_, vim_item)
-						vim_item.kind = (kind_icons[vim_item.kind] or "") .. vim_item.kind
-						return vim_item
+					fields = { "kind", "abbr", "menu" },
+					format = function(entry, item)
+						local icons = require("plugins.utils").cmp_kinds
+						item.kind = icons[item.kind]
+						item.menu = ({
+							nvim_lsp = "Lsp",
+							nvim_lua = "Lua",
+							luasnip = "Snippet",
+							buffer = "Buffer",
+							path = "Path",
+						})[entry.source.name]
+						return item
 					end,
 				},
+				experimental = { ghost_text = true },
 			})
 		end,
 	},
@@ -120,6 +106,7 @@ return {
 	},
 
 	{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+
 	{
 		"echasnovski/mini.comment",
 		event = "VeryLazy",

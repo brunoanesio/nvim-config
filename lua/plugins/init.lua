@@ -23,7 +23,7 @@ require("lazy").setup("plugins.modules", {
 		border = "none",
 	},
 	checker = {
-		enabled = true,
+		enabled = false,
 		notify = true,
 	},
 	change_detection = {

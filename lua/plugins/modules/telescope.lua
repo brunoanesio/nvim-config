@@ -23,6 +23,7 @@ return {
 					color_devicons = true,
 					border = {},
 					borderchars = nil,
+					-- borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
 					set_env = { ["COLORTERM"] = "truecolor" },
 					layout_strategy = "horizontal",
 					layout_config = {
