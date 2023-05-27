@@ -48,7 +48,7 @@ return {
 		},
 		opts = {
 			close_if_last_window = true,
-			popup_border_style = "none",
+			popup_border_style = "single",
 			filesystem = {
 				follow_current_file = true,
 				use_libuv_file_watcher = true,
