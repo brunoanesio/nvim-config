@@ -16,7 +16,7 @@ return {
 					prompt_prefix = "  ",
 					previewer = true,
 					select_strategy = "reset",
-					selection_caret = "  ",
+					selection_caret = " ",
 					sorting_strategy = "ascending",
 					path_display = { "smart" },
 					winblend = 0,
