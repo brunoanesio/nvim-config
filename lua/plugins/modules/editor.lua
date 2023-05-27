@@ -1,12 +1,24 @@
 return {
-	-- {
-	-- 	"brenoprata10/nvim-highlight-colors",
-	-- 	event = "BufReadPre",
-	-- 	opts = {
-	-- 		render = "background",
-	-- 		enable_tailwind = true,
-	-- 	},
-	-- },
+	{
+		"echasnovski/mini.hipatterns",
+		event = "BufReadPost",
+		version = false,
+		config = function()
+			local hipatterns = require("mini.hipatterns")
+			hipatterns.setup({
+				highlighters = {
+					-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+					fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+					hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+					todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+					note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+
+					-- Highlight hex color strings (`#rrggbb`) using that color
+					hex_color = hipatterns.gen_highlighter.hex_color(),
+				},
+			})
+		end,
+	},
 
 	{
 		"RRethy/vim-illuminate",
