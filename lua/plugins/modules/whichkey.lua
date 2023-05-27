@@ -60,7 +60,7 @@ return {
 		config = function(_, opts)
 			local wk = require("which-key")
 			wk.setup(opts)
-			wk.register(require("config.which_key_mappings"), {
+			wk.register(require("options.which_key_mappings"), {
 				mode = "n",
 				prefix = "<leader>",
 				buffer = nil,

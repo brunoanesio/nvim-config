@@ -1,6 +1,4 @@
 return {
-	-- QoL
-	"famiu/bufdelete.nvim",
 	-- Markdown
 	{ "davidgranstrom/nvim-markdown-preview", ft = "markdown" },
 	-- LSP

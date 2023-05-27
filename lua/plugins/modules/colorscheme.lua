@@ -77,6 +77,10 @@ return {
 						TelescopeResultsTitle = { fg = colors.mantle, bg = colors.mantle },
 						TelescopePreviewTitle = { fg = colors.crust, bg = colors.crust },
 						NeoTreeWinSeparator = { fg = colors.base, bg = colors.base },
+						DiagnosticVirtualTextError = { fg = colors.red, bg = colors.none },
+						DiagnosticVirtualTextWarn = { fg = colors.yellow, bg = colors.none },
+						DiagnosticVirtualTextInfo = { fg = colors.sky, bg = colors.none },
+						DiagnosticVirtualTextHint = { fg = colors.teal, bg = colors.none },
 					}
 				end,
 			})

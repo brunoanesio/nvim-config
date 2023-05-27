@@ -10,7 +10,7 @@ return {
 		},
 		config = function()
 			local utils = require("plugins.utils")
-			local lsp_utils = require("plugins.lsp-utils")
+			local lsp_utils = require("plugins.utils.lsp-utils")
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
 
@@ -129,9 +129,9 @@ return {
 			ui = {
 				border = "none",
 				icons = {
-					package_installed = "",
-					package_pending = "➜",
-					package_uninstalled = "",
+					package_installed = "󰄳 ",
+					package_pending = " ",
+					package_uninstalled = " ",
 				},
 			},
 		},

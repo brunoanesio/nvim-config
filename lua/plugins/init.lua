@@ -21,6 +21,11 @@ require("lazy").setup("plugins.modules", {
 	},
 	ui = {
 		border = "none",
+		icons = {
+			ft = "",
+			loaded = "",
+			not_loaded = "",
+		},
 	},
 	checker = {
 		enabled = false,

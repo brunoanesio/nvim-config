@@ -1,44 +1,33 @@
 return {
 	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = function()
+			return require("plugins.configs.noice")
+		end,
+		config = function(_, opts)
+			require("noice").setup(opts)
+		end,
+	},
+
+	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
-		opts = {
-			options = {
-				icons_enabled = true,
-				component_separators = "", -- │
-				section_separators = "",
-				theme = "catppuccin",
-				disabled_filetypes = { statusline = { "alpha", "dashboard" } },
-				always_divide_middle = true,
-				globalstatus = true,
-			},
-			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff" },
-				lualine_c = { "filename" },
-				lualine_x = {
-					{
-						"diagnostics",
-						sources = { "nvim_lsp" },
-						symbols = { error = " ", warn = "! ", info = " ", hint = " " },
-					},
-					{ require("lazy.status").updates, cond = require("lazy.status").has_updates },
-					"filetype",
-				},
-				lualine_y = { "progress" },
-				lualine_z = { "location" },
-			},
-			extensions = { "neo-tree", "lazy" },
-		},
+		dependencies = { "nvim-tree/nvim-web-devicons", "meuter/lualine-so-fancy.nvim" },
+		opts = function()
+			return require("plugins.configs.lualine")
+		end,
+		config = function(_, opts)
+			require("lualine").setup(opts)
+		end,
 	},
 
 	{
 		"echasnovski/mini.indentscope",
 		event = "BufReadPost",
 		opts = {
-			-- symbol = "▏",
-			-- symbol = "│",
-			symbol = "▎",
+			symbol = "│",
 			options = { try_as_border = true },
 		},
 		init = function()
@@ -76,9 +65,6 @@ return {
 	{
 		"rcarriga/nvim-notify",
 		event = "VeryLazy",
-		opts = {
-			-- background_colour = "#000000",
-		},
 		config = function()
 			vim.notify = require("notify")
 		end,
