@@ -12,8 +12,8 @@ map("n", "<leader>nc", ":tabclose<CR>", opts)
 map("n", "<leader>np", ":tabprevious<CR>", opts)
 map("n", "<leader>nn", ":tabnext<CR>", opts)
 -- buffer mappings
-map("n", "<S-l>", ":bnext<CR>", opts)
-map("n", "<S-h>", ":bprevious<CR>", opts)
+map("n", "<Tab>", ":bnext<CR>", opts)
+map("n", "<S-Tab>", ":bprevious<CR>", opts)
 -- telescope mappings
 map("n", "<leader>bm", ":Telescope marks<CR>", opts)
 -- Window Navigation

@@ -33,7 +33,7 @@ require("lazy").setup("plugins.modules", {
 	},
 	change_detection = {
 		enabled = true,
-		notify = "false",
+		notify = false,
 	},
 	performance = {
 		cache = { enabled = true },
