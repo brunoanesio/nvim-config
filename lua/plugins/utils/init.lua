@@ -35,7 +35,7 @@ M.mason_packages = {
   "black",
   "css-lsp",
   "djlint",
-  "eslint_d",
+  -- "eslint_d",
   "emmet-ls",
   "html-lsp",
   "isort",
@@ -51,17 +51,7 @@ M.mason_packages = {
   "shfmt",
   "stylua",
   "taplo",
-  "typescript-language-server",
-}
-
-M.lsp_servers = {
-  "tsserver",
-  "lua_ls",
-  "bashls",
-  "jsonls",
-  "cssls",
-  "taplo",
-  "html",
+  -- "typescript-language-server",
 }
 
 M.diagnostics_active = true

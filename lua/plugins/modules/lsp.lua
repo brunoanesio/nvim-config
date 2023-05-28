@@ -9,16 +9,13 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      local utils = require("plugins.utils")
       local lsp_utils = require("plugins.utils.lsp-utils")
       local mason_lspconfig = require("mason-lspconfig")
       local lspconfig = require("lspconfig")
 
       lsp_utils.setup()
 
-      mason_lspconfig.setup({
-        ensure_installed = utils.lsp_servers,
-      })
+      mason_lspconfig.setup()
 
       mason_lspconfig.setup_handlers({
         function(server_name)
