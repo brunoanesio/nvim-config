@@ -25,6 +25,12 @@ require("lazy").setup("plugins.modules", {
       ft = "",
       loaded = "",
       not_loaded = "",
+      list = {
+        "●",
+        "",
+        "★",
+        "‒",
+      },
     },
   },
   checker = {

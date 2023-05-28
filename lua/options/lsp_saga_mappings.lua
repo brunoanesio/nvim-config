@@ -1,0 +1,17 @@
+return {
+  { "gh", "<cmd>Lspsaga lsp_finder<CR>", desc = "Lspsaga lsp finder" },
+  { "<leader>ca", "<cmd>Lspsaga code_action<CR>", desc = "Lspsaga Code Action" },
+  { "gr", "<cmd>Lspsaga rename<CR>", desc = "Lspsaga rename" },
+  { "gR", "<cmd>Lspsaga rename ++project<CR>", desc = "Lspsaga rename ++project" },
+  { "gd", "<cmd>Lspsaga peek_definition<CR>", desc = "Lspsaga peek definition" },
+  { "gD", "<cmd>Lspsaga goto_definition<CR>", desc = "Goto definition" },
+  { "gt", "<cmd>Lspsaga goto_type_definition<CR>", desc = "Goto definition" },
+  { "gT", "<cmd>Lspsaga peek_type_definition<CR>", desc = "Goto definition" },
+  { "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Lspsaga show line diagnostics" },
+  { "sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Lspsaga show buf diagnostics" },
+  { "sw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", desc = "Lspsaga show workspace diagnostics" },
+  { "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Goto next diagnostic" },
+  { "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Goto prev diagnostic" },
+  { "<leader>ol", "<cmd>Lspsaga outline<CR>", desc = "Lspsaga outline" },
+  { "K", "<cmd>Lspsaga hover_doc<CR>", desc = "Lspsaga hover" },
+}

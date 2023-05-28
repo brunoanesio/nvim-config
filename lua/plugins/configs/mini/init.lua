@@ -25,7 +25,7 @@ M.indent_config = {
 }
 M.indent_init = function()
   vim.api.nvim_create_autocmd("Filetype", {
-    pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+    pattern = { "lspsagafinder", "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
     callback = function()
       vim.b.miniindentscope_disable = true
     end,

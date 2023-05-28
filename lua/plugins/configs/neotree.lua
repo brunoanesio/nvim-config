@@ -1,5 +1,5 @@
 local options = {
-  close_if_last_window = true,
+  close_if_last_window = false,
   popup_border_style = "single",
   filesystem = {
     follow_current_file = true,

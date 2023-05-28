@@ -63,6 +63,7 @@ return {
     name = "Open",
     x = { "<cmd>!xdg-open %<CR>", "Open file with XDG-Open" },
     m = { "<cmd>MarkdownPreview<CR>", "Open Markdown Preview" },
+    l = { "<cmd>Lspsaga outline<CR>", "Open Lspsaga outline" },
   },
   p = {
     name = "Plugins",
