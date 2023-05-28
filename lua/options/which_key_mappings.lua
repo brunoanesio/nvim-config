@@ -64,6 +64,9 @@ return {
     x = { "<cmd>!xdg-open %<CR>", "Open file with XDG-Open" },
     m = { "<cmd>MarkdownPreview<CR>", "Open Markdown Preview" },
     l = { "<cmd>Lspsaga outline<CR>", "Open Lspsaga outline" },
+    v = { "<cmd>lua require('nvterm.terminal').toggle('vertical')<CR>", "Toggle Vertical Terminal" },
+    h = { "<cmd>lua require('nvterm.terminal').toggle('horizontal')<CR>", "Toggle Horizontal Terminal" },
+    f = { "<cmd>lua require('nvterm.terminal').toggle('float')<CR>", "Toggle Float Terminal" },
   },
   p = {
     name = "Plugins",

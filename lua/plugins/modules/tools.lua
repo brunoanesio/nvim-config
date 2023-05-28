@@ -61,4 +61,25 @@ return {
     end,
     keys = require("options.lsp_saga_mappings"),
   },
+
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    keys = { "<space>", desc = "WhichKey" },
+    opts = function()
+      return require("plugins.configs.whichkey")
+    end,
+    config = function(_, opts)
+      local wk = require("which-key")
+      wk.setup(opts)
+      wk.register(require("options.which_key_mappings"), {
+        mode = "n",
+        prefix = "<leader>",
+        buffer = nil,
+        silent = true,
+        noremap = true,
+        nowait = true,
+      })
+    end,
+  },
 }

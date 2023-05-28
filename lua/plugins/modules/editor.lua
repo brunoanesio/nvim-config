@@ -1,4 +1,24 @@
 return {
+  { "davidgranstrom/nvim-markdown-preview", ft = "markdown" },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    version = false,
+    event = { "BufReadPost", "BufNewFile" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-refactor",
+      "windwp/nvim-ts-autotag",
+      "HiPhish/nvim-ts-rainbow2",
+    },
+    opts = function()
+      return require("plugins.configs.treesitter")
+    end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
+  },
+
   {
     "echasnovski/mini.hipatterns",
     event = "BufReadPost",
