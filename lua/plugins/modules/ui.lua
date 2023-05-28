@@ -1,5 +1,31 @@
 return {
   {
+    "glepnir/dashboard-nvim",
+    event = "VimEnter",
+    dependencies = { { "nvim-tree/nvim-web-devicons" } },
+    opts = function()
+      return require("plugins.configs.dashboard")
+    end,
+    config = function(_, opts)
+      require("dashboard").setup(opts)
+    end,
+  },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 100,
+    lazy = false,
+    opts = function()
+      return require("plugins.configs.catppuccin")
+    end,
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.api.nvim_command("colorscheme catppuccin")
+    end,
+  },
+
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim" },
