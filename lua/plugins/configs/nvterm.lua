@@ -29,7 +29,7 @@ M.mappings = {
   { "<A-h>", "<cmd>lua require('nvterm.terminal').new('horizontal')<CR>", desc = "New Horizontal terminal" },
   { "<leader>h", "<cmd>lua require('nvterm.terminal').toggle('horizontal')<CR>", desc = "Toggle Horizontal terminal" },
   { "<A-v>", "<cmd>lua require('nvterm.terminal').new('vertical')<CR>", desc = "New Vertical terminal" },
-  { "<leader>v", "<cmd>lua require('nvterm.terminal').toggle('vertical')<CR>", desc = "Toggle Vertical terminal" },
+  { "<leader>t", "<cmd>lua require('nvterm.terminal').toggle('vertical')<CR>", desc = "Toggle Vertical terminal" },
   { "<A-t>", "<cmd>lua require('nvterm.terminal').toggle('float')<CR>", desc = "Toggle Float terminal" },
 }
 return M
