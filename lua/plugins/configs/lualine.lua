@@ -10,7 +10,7 @@ local options = {
 	},
 	sections = {
 		lualine_a = { "fancy_mode" },
-		lualine_b = { "branch" },
+		lualine_b = { "branch", "diff" },
 		lualine_c = {
 			{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
 			{

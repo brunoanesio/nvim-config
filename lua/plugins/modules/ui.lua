@@ -26,18 +26,10 @@ return {
 	{
 		"echasnovski/mini.indentscope",
 		event = "BufReadPost",
-		opts = {
-			symbol = "│",
-			options = { try_as_border = true },
-		},
-		init = function()
-			vim.api.nvim_create_autocmd("Filetype", {
-				pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
-				callback = function()
-					vim.b.miniindentscope_disable = true
-				end,
-			})
+		opts = function()
+			return require("plugins.configs.mini").indent_config
 		end,
+		init = require("plugins.configs.mini").indent_init,
 		config = function(_, opts)
 			require("mini.indentscope").setup(opts)
 		end,
@@ -46,17 +38,9 @@ return {
 	{
 		"echasnovski/mini.animate",
 		event = "BufReadPost",
-		opts = {
-			resize = {
-				enable = false,
-			},
-			open = {
-				enable = false,
-			},
-			close = {
-				enable = false,
-			},
-		},
+		opts = function()
+			return require("plugins.configs.mini").animate_config
+		end,
 		config = function(_, opts)
 			require("mini.animate").setup(opts)
 		end,
