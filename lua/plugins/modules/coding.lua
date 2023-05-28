@@ -31,6 +31,7 @@ return {
 
   {
     "echasnovski/mini.surround",
+    event = { "BufReadPre", "BufNewFile" },
     config = function(_, opts)
       require("mini.surround").setup(opts)
     end,
@@ -51,7 +52,7 @@ return {
 
   {
     "echasnovski/mini.pairs",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     config = function(_, opts)
       require("mini.pairs").setup(opts)
     end,
