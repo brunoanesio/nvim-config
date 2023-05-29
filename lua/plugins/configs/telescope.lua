@@ -154,6 +154,6 @@ local options = {
       case_mode = "smart_case",
     },
   },
-  extensions_list = { "fzf", "file_browser", "notify" },
+  extensions_list = { "fzf", "notify" },
 }
 return options

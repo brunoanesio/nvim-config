@@ -7,8 +7,6 @@ return {
     version = false,
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
-      "nvim-treesitter/nvim-treesitter-refactor",
-      "windwp/nvim-ts-autotag",
       "HiPhish/nvim-ts-rainbow2",
     },
     opts = function()
@@ -51,8 +49,6 @@ return {
     dependencies = {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-file-browser.nvim",
-      "nvim-telescope/telescope-symbols.nvim",
     },
     opts = function()
       return require("plugins.configs.telescope")
