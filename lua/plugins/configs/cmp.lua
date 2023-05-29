@@ -54,6 +54,10 @@ local options = {
     { name = "buffer" },
     { name = "path" },
   },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, item)
