@@ -18,18 +18,6 @@ return {
   },
 
   {
-    "echasnovski/mini.hipatterns",
-    event = "BufReadPost",
-    version = false,
-    opts = function()
-      return require("plugins.configs.mini").hipatterns_config
-    end,
-    config = function(_, opts)
-      require("mini.hipatterns").setup(opts)
-    end,
-  },
-
-  {
     "RRethy/vim-illuminate",
     event = { "BufReadPost", "BufNewFile" },
     opts = function()

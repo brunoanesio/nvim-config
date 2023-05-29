@@ -50,29 +50,6 @@ return {
   },
 
   {
-    "echasnovski/mini.indentscope",
-    event = "BufReadPost",
-    opts = function()
-      return require("plugins.configs.mini").indent_config
-    end,
-    init = require("plugins.configs.mini").indent_init,
-    config = function(_, opts)
-      require("mini.indentscope").setup(opts)
-    end,
-  },
-
-  {
-    "echasnovski/mini.animate",
-    event = "BufReadPost",
-    opts = function()
-      return require("plugins.configs.mini").animate_config
-    end,
-    config = function(_, opts)
-      require("mini.animate").setup(opts)
-    end,
-  },
-
-  {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
     config = function()

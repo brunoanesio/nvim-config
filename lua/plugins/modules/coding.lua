@@ -29,32 +29,34 @@ return {
     end,
   },
 
-  {
-    "echasnovski/mini.surround",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function(_, opts)
-      require("mini.surround").setup(opts)
-    end,
-  },
-
   { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
 
   {
-    "echasnovski/mini.comment",
-    keys = { "gc", "gcc" },
-    opts = function()
-      return require("plugins.configs.mini").comment_config
-    end,
-    config = function(_, opts)
-      require("mini.comment").setup(opts)
-    end,
-  },
-
-  {
-    "echasnovski/mini.pairs",
+    "echasnovski/mini.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    config = function(_, opts)
-      require("mini.pairs").setup(opts)
+    init = require("plugins.configs.mini").indent,
+    config = function()
+      local opts = require("plugins.configs.mini")
+      local comment = opts.comment_config
+      local indent = opts.indent_config
+      require("mini.surround").setup()
+      require("mini.pairs").setup()
+      require("mini.ai").setup()
+      require("mini.jump").setup()
+      require("mini.comment").setup(comment)
+      require("mini.indentscope").setup(indent)
+      require("mini.hipatterns").setup({
+        highlighters = {
+          -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+          fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+          hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+          todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+          note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+
+          -- Highlight hex color strings (`#rrggbb`) using that color
+          hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
+        },
+      })
     end,
   },
 
