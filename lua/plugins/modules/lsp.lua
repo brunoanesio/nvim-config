@@ -5,7 +5,7 @@ return {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-      { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
+      { "folke/neodev.nvim", opts = {} },
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
@@ -32,66 +32,6 @@ return {
                 documentFormattingRangeProvider = false,
               },
             },
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim" },
-                },
-                telemetry = {
-                  enable = false,
-                },
-              },
-            },
-          })
-        end,
-        ["jsonls"] = function()
-          lspconfig.jsonls.setup({
-            init_options = {
-              provideFormatter = false,
-            },
-          })
-        end,
-        ["pylsp"] = function()
-          lspconfig.pylsp.setup({
-            settings = {
-              pylsp = {
-                plugins = {
-                  flake8 = {
-                    enabled = false,
-                    maxLineLength = 95,
-                  },
-                  autopep8 = {
-                    enabled = false,
-                  },
-                  black = {
-                    enabled = true,
-                  },
-                  ruff = {
-                    enabled = true,
-                  },
-                  rope_completion = {
-                    enabled = false,
-                    eager = false,
-                  },
-                  rope_autoimport = {
-                    enabled = true,
-                    memory = false,
-                  },
-                  pycodestyle = {
-                    enabled = false,
-                  },
-                  pyflakes = {
-                    enabled = false,
-                  },
-                  pylint = {
-                    enabled = false,
-                  },
-                  mccabe = {
-                    enabled = false,
-                  },
-                },
-              },
-            },
           })
         end,
         ["emmet_ls"] = function()
@@ -110,11 +50,6 @@ return {
               },
               provideFormatter = false,
             },
-          })
-        end,
-        ["clangd"] = function()
-          lspconfig.clangd.setup({
-            cmd = { "clangd", "--offset-encoding=utf-16" },
           })
         end,
       })
