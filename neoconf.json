@@ -33,10 +33,8 @@
       "pylsp.plugins.black.enabled": true
     },
     "html": {
+      "html.format.enable": false,
       "html.autoClosingTags": true
-    },
-    "clangd": {
-      "clangd.arguments": ["--offset-encoding=utf-16"]
     }
   }
 }

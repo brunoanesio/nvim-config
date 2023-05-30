@@ -48,8 +48,12 @@ return {
                 css = true,
                 javascript = true,
               },
-              provideFormatter = false,
             },
+          })
+        end,
+        ["clangd"] = function()
+          lspconfig.clangd.setup({
+            cmd = { "clangd", "--offset-encoding=utf-16" },
           })
         end,
       })
