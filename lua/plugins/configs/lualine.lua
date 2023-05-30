@@ -19,7 +19,8 @@ local options = {
     },
     lualine_x = { "fancy_lsp_servers" },
     lualine_y = { "progress" },
-    lualine_z = { function() return " " .. os.date("%R") end },
+    lualine_z = { "location" },
+    -- lualine_z = { function() return " " .. os.date("%R") end },
   },
   extensions = { "neo-tree", "lazy" },
 }
