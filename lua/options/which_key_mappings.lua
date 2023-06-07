@@ -5,6 +5,7 @@ return {
   [","] = { "<cmd>Telescope buffers<CR>", "Change buffer" },
   ["v"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer Find" },
   ["."] = { "<cmd>Telescope treesitter<cr>", "List Symbols" },
+  ["s"] = { "<cmd>w!<CR>", "Save" },
   b = {
     name = "Buffer",
     b = { "<cmd>Telescope buffers<cr>", "See open buffers" },
@@ -12,6 +13,29 @@ return {
     p = { "<cmd>bprevious<cr>", "Prev Buffer" },
     k = { "<cmd>bdelete<CR>", "Close Buffer" },
     B = { "<cmd>Telescope buffers<cr>", "Change Buffer" },
+  },
+  d = {
+    name = "Debugging",
+    b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+    c = { "<cmd>lua require('dap').continue()<CR>", "Start/Continue debugging" },
+    n = { "<cmd>lua require('dap').step_over()<CR>", "Step over" },
+    s = {
+      function()
+        local widgets = require("dap.ui.widgets")
+        local sidebar = widgets.sidebar(widgets.scopes)
+        sidebar.open()
+      end,
+      "Open Sidebar",
+    },
+    r = {
+      name = "Run",
+      p = {
+        function()
+          require("dap-python").test_method()
+        end,
+        "Debug Run Python ",
+      },
+    },
   },
   f = {
     name = "File",

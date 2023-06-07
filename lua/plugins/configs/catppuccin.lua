@@ -19,18 +19,24 @@ local config = {
     operators = {},
   },
   integrations = {
+    alpha = false,
     barbecue = {
       dim_dirname = true,
       bold_basename = true,
       dim_context = false,
+      alt_background = false,
     },
     cmp = true,
     dashboard = true,
+    dap = {
+      enabled = true,
+      enabled_ui = true,
+    },
     gitsigns = true,
     illuminate = true,
     lsp_saga = true,
-    mason = true,
     markdown = true,
+    mason = true,
     mini = true,
     native_lsp = {
       enabled = true,
