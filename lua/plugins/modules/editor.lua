@@ -1,5 +1,5 @@
 return {
-  { "davidgranstrom/nvim-markdown-preview", ft = "markdown" },
+  { "davidgranstrom/nvim-markdown-preview", cmd = "MarkdownPreview" },
 
   {
     "nvim-treesitter/nvim-treesitter",

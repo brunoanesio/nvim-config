@@ -1,6 +1,7 @@
 return {
   {
     "mfussenegger/nvim-dap",
+    ft = "python",
     config = function()
       require("dap")
       local sign = vim.fn.sign_define
@@ -25,6 +26,7 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
+    ft = "python",
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")

@@ -23,7 +23,6 @@ return {
 
   {
     "NvChad/nvterm",
-    event = "BufReadPre",
     opts = function()
       return require("plugins.configs.nvterm").opts
     end,

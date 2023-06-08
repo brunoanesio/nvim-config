@@ -49,7 +49,6 @@ local options = {
   },
   sources = {
     { name = "nvim_lsp" },
-    { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
@@ -61,7 +60,6 @@ local options = {
       item.kind = icons[item.kind]
       item.menu = ({
         nvim_lsp = "Lsp",
-        nvim_lua = "Lua",
         luasnip = "Snippet",
         buffer = "Buffer",
         path = "Path",
