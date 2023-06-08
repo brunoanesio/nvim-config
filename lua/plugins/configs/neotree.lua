@@ -4,6 +4,7 @@ local options = {
   filesystem = {
     follow_current_file = true,
     use_libuv_file_watcher = true,
+    hijack_netrw_behavior = "open_current",
   },
   source = {
     "filesystem",
