@@ -1,9 +1,9 @@
 local M = {}
 M.comment_config = {
-  hooks = {
-    pre = function()
-      require("ts_context_commentstring.internal").update_commentstring({})
-    end,
+  mappings = {
+    comment = "gc",
+    comment_line = "gcc",
+    textobject = "gc",
   },
 }
 M.indent_config = {

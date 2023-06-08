@@ -28,8 +28,6 @@ return {
     end,
   },
 
-  { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-
   {
     "echasnovski/mini.nvim",
     event = { "BufReadPre", "BufNewFile" },

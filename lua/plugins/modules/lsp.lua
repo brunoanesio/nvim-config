@@ -24,16 +24,6 @@ return {
             capabilities = lsp_utils.capabilities,
           })
         end,
-        ["lua_ls"] = function()
-          lspconfig.lua_ls.setup({
-            client = {
-              server_capabilities = {
-                documentFormattingProvider = false,
-                documentFormattingRangeProvider = false,
-              },
-            },
-          })
-        end,
         ["emmet_ls"] = function()
           lspconfig.emmet_ls.setup({
             filetypes = { "html", "htmldjango", "css", "typescriptreact", "javascriptreact" },
@@ -54,6 +44,15 @@ return {
         ["clangd"] = function()
           lspconfig.clangd.setup({
             cmd = { "clangd", "--offset-encoding=utf-16" },
+          })
+        end,
+        ["ruff_lsp"] = function()
+          lspconfig.ruff_lsp.setup({
+            client = {
+              server_capabilities = {
+                hoverProvider = false,
+              },
+            },
           })
         end,
       })

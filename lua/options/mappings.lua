@@ -50,3 +50,5 @@ map("n", "<a-n>", '<cmd>lua require"illuminate".goto_next_reference()<cr>', opts
 map("n", "<a-p>", '<cmd>lua require"illuminate".goto_prev_reference()<cr>', opts)
 map("n", "<a-i>", '<cmd>lua require"illuminate".textobj_select()<cr>', opts)
 map("n", "<ESC>", ":noh <CR>", opts)
+-- Save witch Ctrl-s
+map("n", "<C-s>", "<cmd>w!<cr>", opts)
