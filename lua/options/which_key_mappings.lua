@@ -6,6 +6,7 @@ return {
   ["v"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer Find" },
   ["."] = { "<cmd>Telescope treesitter<cr>", "List Symbols" },
   ["s"] = { "<cmd>w!<CR>", "Save" },
+  ["x"] = { "<cmd>bdelete<CR>", "Close Buffer" },
   b = {
     name = "Buffer",
     b = { "<cmd>Telescope buffers<cr>", "See open buffers" },

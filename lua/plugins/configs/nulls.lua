@@ -1,9 +1,6 @@
 local M = {}
 local nls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-local function has_stylua_configured(_utils)
-  return _utils.root_has_file({ ".stylua.toml", "stylua.toml" })
-end
 local lsp_formatting = function(bufnr)
   vim.lsp.buf.format({
     filter = function(client)
@@ -35,11 +32,12 @@ M.sources = {
   -- diagnostics.ruff,
   diagnostics.djlint,
   formatting.djlint,
-  formatting.stylua.with({ condition = has_stylua_configured }),
+  formatting.stylua,
   formatting.prettier,
   formatting.shfmt,
   formatting.clang_format,
-  code_actions.eslint_d,
+  code_actions.shellcheck,
+  -- code_actions.eslint_d,
 }
 
 return M

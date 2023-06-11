@@ -25,13 +25,15 @@
       "pylsp.plugins.autopep8.enabled": false,
       "pylsp.plugins.pycodestyle.enabled": false,
       "pylsp.plugins.pyflakes.enabled": false,
+      "pylsp.plugins.yapf.enabled": false,
       "pylsp.plugins.pylint.enabled": false,
       "pylsp.plugins.mccabe.enabled": false,
       "pylsp.plugins.rope_completion.enabled": false,
       "pylsp.plugins.rope_autoimport.enabled": true,
       "pylsp.plugins.rope_autoimport.memory": true,
       "pylsp.plugins.ruff.enabled": true,
-      "pylsp.plugins.black.enabled": true
+      "pylsp.plugins.black.enabled": true,
+      "pylsp.plugins.isort.enabled": true
     },
     "html": {
       "html.format.enable": false,
