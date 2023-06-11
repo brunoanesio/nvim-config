@@ -23,7 +23,7 @@ M.bottom_left_thin = "🭼"
 M.bottom_right_thin = "🭿"
 M.top_and_bottom = "🮀"
 
-M.lsp_signs = { Error = " ", Warn = "! ", Hint = " ", Info = " " }
+M.lsp_signs = { Error = " ", Warn = "! ", Hint = "󰛩 ", Info = " " }
 
 M.cmp_kinds = {
   Text = " ",

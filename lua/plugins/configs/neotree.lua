@@ -1,6 +1,7 @@
 local options = {
   close_if_last_window = false,
   popup_border_style = "single",
+  enable_diagnostics = true,
   filesystem = {
     follow_current_file = true,
     use_libuv_file_watcher = true,
