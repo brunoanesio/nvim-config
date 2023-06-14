@@ -1,4 +1,7 @@
 return {
+
+  { "fladson/vim-kitty", ft = "kitty" },
+
   {
     "folke/persistence.nvim",
     event = "BufReadPre",
