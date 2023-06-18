@@ -51,6 +51,7 @@ M.cmp_kinds = {
   Event = "",
   Operator = " ",
   TypeParameter = " ",
+  Codeium = " ",
 }
 
 M.mason_packages = {
