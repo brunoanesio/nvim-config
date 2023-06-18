@@ -9,7 +9,8 @@ local options = {
   },
   lightbulb = {
     enable = true,
-    virtual_text = false,
+    sign = false,
+    virtual_text = true,
   },
   beacon = {
     enable = true,

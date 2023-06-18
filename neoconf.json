@@ -29,6 +29,7 @@
       "pylsp.plugins.pylint.enabled": false,
       "pylsp.plugins.mccabe.enabled": false,
       "pylsp.plugins.rope_completion.enabled": false,
+      "pylsp.plugins.rope_completion.eager": false,
       "pylsp.plugins.rope_autoimport.enabled": true,
       "pylsp.plugins.rope_autoimport.memory": true,
       "pylsp.plugins.ruff.enabled": true,
