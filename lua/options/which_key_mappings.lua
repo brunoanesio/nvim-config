@@ -84,8 +84,12 @@ return {
   },
   o = {
     name = "Open",
+    m = {
+      name = "Markdown",
+      p = { "<cmd>lua require('peek').open()<CR>", "Open Markdown Preview" },
+      c = { "<cmd>lua require('peek').close()<CR>", "Close Markdown Preview" },
+    },
     x = { "<cmd>!xdg-open %<CR>", "Open file with XDG-Open" },
-    m = { "<cmd>MarkdownPreview<CR>", "Open Markdown Preview" },
     l = { "<cmd>Lspsaga outline<CR>", "Open Lspsaga outline" },
     v = { "<cmd>lua require('nvterm.terminal').toggle('vertical')<CR>", "Toggle Vertical Terminal" },
     h = { "<cmd>lua require('nvterm.terminal').toggle('horizontal')<CR>", "Toggle Horizontal Terminal" },

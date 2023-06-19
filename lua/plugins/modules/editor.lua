@@ -1,5 +1,21 @@
 return {
-  { "davidgranstrom/nvim-markdown-preview", cmd = "MarkdownPreview" },
+  {
+    "toppair/peek.nvim",
+    build = "deno task --quiet build:fast",
+    ft = "markdown",
+    cmd = { "PeekOpen", "PeekClose" },
+    opts = {
+      auto_load = true,
+      close_on_bdelete = true,
+      app = "browser", -- or webview
+      update_on_change = true,
+    },
+    config = function(_, opts)
+      require("peek").setup(opts)
+      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+    end,
+  },
 
   {
     "nvim-treesitter/nvim-treesitter",
