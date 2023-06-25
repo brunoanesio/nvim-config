@@ -62,6 +62,7 @@ local options = {
       item.menu = ({
         nvim_lsp = "Lsp",
         luasnip = "Snippet",
+        codeium = "Codeium",
         buffer = "Buffer",
         path = "Path",
       })[entry.source.name]
