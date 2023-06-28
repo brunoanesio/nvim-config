@@ -2,7 +2,7 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 local options = {
   completion = {
-    completeopt = "menu,menuone,noinsert",
+    completeopt = "menu,menuone,noinsert,preview",
   },
   snippet = {
     expand = function(args)
@@ -48,9 +48,9 @@ local options = {
     }),
   },
   sources = {
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
     { name = "codeium" },
+    { name = "luasnip" },
+    { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
   },
