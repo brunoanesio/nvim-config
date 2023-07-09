@@ -25,19 +25,6 @@ return {
   },
 
   {
-    "NvChad/nvterm",
-    opts = function()
-      return require("plugins.configs.nvterm").opts
-    end,
-    config = function(_, opts)
-      require("nvterm").setup(opts)
-    end,
-    keys = function()
-      return require("plugins.configs.nvterm").mappings
-    end,
-  },
-
-  {
     "utilyre/barbecue.nvim",
     event = "BufRead",
     name = "barbecue",

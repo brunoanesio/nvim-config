@@ -1,5 +1,5 @@
-local sep_right = { right = "" }
-local sep_left = { left = "" }
+local sep_right = { right = "" }
+local sep_left = { left = "" }
 local options = {
   options = {
     icons_enabled = true,
