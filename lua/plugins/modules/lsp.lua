@@ -29,16 +29,24 @@ return {
   },
 
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "mhartington/formatter.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = function()
+      return require("plugins.configs.formatter")
+    end,
+    config = function(_, opts)
+      require("formatter").setup(opts)
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-lint",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-      local sources = require("plugins.configs.nulls").sources
-      local on_attach = require("plugins.configs.nulls").on_attach
-      local nls = require("null-ls")
-      nls.setup({
-        sources = sources,
-        on_attach = on_attach,
-      })
+      require("lint").linters_by_ft = {
+        html = { "curlylint" },
+        htmldjango = { "curlylint" },
+      }
     end,
   },
 }
