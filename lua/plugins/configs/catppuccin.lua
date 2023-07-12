@@ -58,7 +58,7 @@ local config = {
     neotree = true,
     telescope = true,
     treesitter = true,
-    ts_rainbow2 = true,
+    rainbow_delimiters = true,
     which_key = true,
   },
   custom_highlights = function(colors)
