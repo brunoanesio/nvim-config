@@ -93,9 +93,9 @@ return {
 
   {
     "nvim-neo-tree/neo-tree.nvim",
-    cmd = "NeoTreeFocusToggle",
+    cmd = "Neotree",
     keys = {
-      { "<leader>e", "<cmd>NeoTreeFocusToggle<CR>", desc = "Toggle NeoTree", remap = true },
+      { "<leader>e", "<cmd>Neotree<CR>", desc = "Toggle NeoTree", remap = true },
     },
     opts = function()
       return require("plugins.configs.neotree")

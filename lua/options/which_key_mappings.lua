@@ -1,6 +1,6 @@
 return {
   mode = { "n", "v" },
-  ["e"] = { "<cmd>NeoTreeFocusToggle<CR>", "Explorer" },
+  ["e"] = { "<cmd>Neotree<CR>", "Explorer" },
   [" "] = { "<cmd>Telescope find_files<CR>", "Find File" },
   [","] = { "<cmd>Telescope buffers<CR>", "Change buffer" },
   ["v"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer Find" },
