@@ -70,7 +70,7 @@ return {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     D = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    f = { "<cmd>lua vim.lsp.buf.format({async=true})<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format({async=true})<cr>", "LSP Format" },
     I = { "<cmd>LspInfo<cr>", "LSP Info" },
     i = { "<cmd>Mason<cr>", "Mason Info" },
     j = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next Diagnostic" },
