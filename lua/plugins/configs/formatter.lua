@@ -1,4 +1,11 @@
 local util = require("formatter.util")
+local prettierd = function()
+  return {
+    exe = "prettierd",
+    args = { util.escape_path(util.get_current_buffer_file_path()) },
+    stdin = true,
+  }
+end
 local opts = {
   logging = true,
   log_level = vim.log.levels.WARN,
@@ -78,29 +85,13 @@ local opts = {
       require("formatter.filetypes.json").prettierd,
     },
 
-    jsonc = {
-      function()
-        return {
-          exe = "prettierd",
-          args = { util.escape_path(util.get_current_buffer_file_path()) },
-          stdin = true,
-        }
-      end,
-    },
+    jsonc = { prettierd },
 
     yaml = {
       require("formatter.filetypes.yaml").prettierd,
     },
 
-    scss = {
-      function()
-        return {
-          exe = "prettierd",
-          args = { util.escape_path(util.get_current_buffer_file_path()) },
-          stdin = true,
-        }
-      end,
-    },
+    scss = { prettierd },
 
     ["*"] = {
       require("formatter.filetypes.any").remove_trailing_whitespace,

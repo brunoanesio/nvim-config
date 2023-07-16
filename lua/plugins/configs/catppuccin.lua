@@ -56,30 +56,19 @@ local config = {
     noice = true,
     notify = true,
     neotree = true,
-    telescope = true,
+    telescope = { enabled = true, style = "nvchad" },
     treesitter = true,
     rainbow_delimiters = true,
     which_key = true,
   },
+  color_overrides = {
+    mocha = {
+      base = "#1E1D2D",
+    },
+  },
   custom_highlights = function(colors)
     return {
-      TelescopeSelection = { bg = colors.surface0 },
-      TelescopePromptCounter = { fg = colors.mauve },
-      TelescopePromptPrefix = { bg = colors.surface0 },
-      TelescopePromptNormal = { bg = colors.surface0 },
-      TelescopeResultsNormal = { bg = colors.mantle },
-      TelescopePreviewNormal = { bg = colors.crust },
-      TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
-      TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
-      TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
-      TelescopePromptTitle = { fg = colors.surface0, bg = colors.surface0 },
-      TelescopeResultsTitle = { fg = colors.mantle, bg = colors.mantle },
-      TelescopePreviewTitle = { fg = colors.crust, bg = colors.crust },
       NeoTreeWinSeparator = { fg = colors.base, bg = colors.base },
-      DiagnosticVirtualTextError = { fg = colors.red, bg = colors.none },
-      DiagnosticVirtualTextWarn = { fg = colors.yellow, bg = colors.none },
-      DiagnosticVirtualTextInfo = { fg = colors.sky, bg = colors.none },
-      DiagnosticVirtualTextHint = { fg = colors.teal, bg = colors.none },
     }
   end,
 }
