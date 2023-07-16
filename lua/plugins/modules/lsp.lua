@@ -9,8 +9,8 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      local lsp = require("plugins.configs.servers")
-      lsp.setup()
+      local lsp_setup = require("plugins.configs.servers").setup
+      lsp_setup()
     end,
   },
 
@@ -23,8 +23,8 @@ return {
     end,
     config = function(_, opts)
       require("mason").setup(opts)
-      local ensure_installed = require("plugins.configs.mason")
-      ensure_installed.install()
+      local ensure_installed = require("plugins.configs.mason").install
+      ensure_installed()
     end,
   },
 
