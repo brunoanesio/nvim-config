@@ -6,9 +6,6 @@ return {
     opts = function()
       return require("plugins.configs.dashboard")
     end,
-    config = function(_, opts)
-      require("dashboard").setup(opts)
-    end,
   },
 
   {
@@ -32,9 +29,6 @@ return {
     opts = function()
       return require("plugins.configs.noice")
     end,
-    config = function(_, opts)
-      require("noice").setup(opts)
-    end,
   },
 
   {
@@ -43,9 +37,6 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons", "meuter/lualine-so-fancy.nvim" },
     opts = function()
       return require("plugins.configs.lualine")
-    end,
-    config = function(_, opts)
-      require("lualine").setup(opts)
     end,
   },
 

@@ -10,8 +10,7 @@ return {
       app = "browser", -- or webview
       update_on_change = true,
     },
-    config = function(_, opts)
-      require("peek").setup(opts)
+    config = function()
       vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
       vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
     end,
@@ -20,27 +19,8 @@ return {
   {
     "HiPhish/rainbow-delimiters.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    config = function(_, opts)
-      local rainbow_delimiters = require("rainbow-delimiters")
-      vim.g.rainbow_delimiters = {
-        strategy = {
-          [""] = rainbow_delimiters.strategy["global"],
-          vim = rainbow_delimiters.strategy["local"],
-        },
-        query = {
-          [""] = "rainbow-delimiters",
-          lua = "rainbow-blocks",
-        },
-        highlight = {
-          "RainbowDelimiterRed",
-          "RainbowDelimiterYellow",
-          "RainbowDelimiterBlue",
-          "RainbowDelimiterOrange",
-          "RainbowDelimiterGreen",
-          "RainbowDelimiterViolet",
-          "RainbowDelimiterCyan",
-        },
-      }
+    config = function()
+      return require("plugins.configs.delimiters").delimiters
     end,
   },
 
@@ -94,14 +74,12 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     cmd = "Neotree",
+    branch = "v3.x",
     keys = {
       { "<leader>e", "<cmd>Neotree<CR>", desc = "Toggle NeoTree", remap = true },
     },
     opts = function()
       return require("plugins.configs.neotree")
-    end,
-    config = function(_, opts)
-      require("neo-tree").setup(opts)
     end,
   },
 }

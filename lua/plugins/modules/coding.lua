@@ -23,9 +23,6 @@ return {
     opts = function()
       return require("plugins.configs.cmp")
     end,
-    config = function(_, opts)
-      require("cmp").setup(opts)
-    end,
   },
 
   {
@@ -64,9 +61,6 @@ return {
     event = "BufReadPre",
     opts = function()
       return require("plugins.configs.gitsigns")
-    end,
-    config = function(_, opts)
-      require("gitsigns").setup(opts)
     end,
   },
 }

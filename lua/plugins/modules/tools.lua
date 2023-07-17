@@ -45,9 +45,6 @@ return {
     opts = function()
       return require("plugins.configs.saga")
     end,
-    config = function(_, opts)
-      require("lspsaga").setup(opts)
-    end,
     keys = require("options.lsp_saga_mappings"),
   },
 

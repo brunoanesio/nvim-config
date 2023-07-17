@@ -1,9 +1,9 @@
 local options = {
-  close_if_last_window = false,
+  close_if_last_window = true,
   popup_border_style = "single",
   enable_diagnostics = true,
   filesystem = {
-    follow_current_file = true,
+    follow_current_file = { enabled = true },
     use_libuv_file_watcher = true,
     hijack_netrw_behavior = "open_current",
   },
