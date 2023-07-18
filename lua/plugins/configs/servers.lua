@@ -1,18 +1,17 @@
 local M = {}
 M.setup = function()
-  local lsp_utils = require("plugins.utils.lsp-utils")
   local mason_lspconfig = require("mason-lspconfig")
   local lspconfig = require("lspconfig")
-
-  lsp_utils.setup()
+  local on_attach = require("plugins.configs.lsp").on_attach
+  local capabilities = require("plugins.configs.lsp").capabilities
 
   mason_lspconfig.setup()
 
   mason_lspconfig.setup_handlers({
     function(server_name)
       lspconfig[server_name].setup({
-        on_attach = lsp_utils.on_attach,
-        capabilities = lsp_utils.capabilities,
+        on_attach = on_attach,
+        capabilities = capabilities,
       })
     end,
     ["emmet_ls"] = function()

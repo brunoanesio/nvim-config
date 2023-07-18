@@ -21,8 +21,8 @@ capabilities.textDocument.completion.completionItem = {
 
 M.capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-M.setup = function()
-  vim.diagnostic.config({
+M.opts = {
+  diagnostics = {
     virtual_text = {
       prefix = "󱓻 ",
     },
@@ -38,15 +38,16 @@ M.setup = function()
     underline = true,
     update_in_insert = true,
     severity_sort = false,
-  })
+  },
+}
 
+M.config = function()
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "single",
   })
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "single",
   })
-
   ---- sign column
   local signs = require("plugins.utils").lsp_signs
 

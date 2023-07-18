@@ -1,16 +1,23 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
       { "folke/neodev.nvim", opts = {} },
       "williamboman/mason-lspconfig.nvim",
     },
-    config = function()
+    cmd = { "LspInfo", "LspInstall", "LspUninstall" },
+    opts = function()
+      return require("plugins.configs.lsp").opts
+    end,
+    config = function(_, opts)
       local lsp_setup = require("plugins.configs.servers").setup
       lsp_setup()
+      local config_setup = require("plugins.configs.lsp").config
+      config_setup()
+      vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
     end,
   },
 
