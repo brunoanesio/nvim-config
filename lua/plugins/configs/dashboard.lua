@@ -1,94 +1,57 @@
-local options = {
-  theme = "doom",
-  config = {
-    header = {
-      [[                                                                   ]],
-      [[                                                                   ]],
-      [[ ██████   █████                                ███                 ]],
-      [[░░██████ ░░███                                ░░░                  ]],
-      [[ ░███░███ ░███   ██████   ██████  █████ █████ ████  █████████████  ]],
-      [[ ░███░░███░███  ███░░███ ███░░███░░███ ░░███ ░░███ ░░███░░███░░███ ]],
-      [[ ░███ ░░██████ ░███████ ░███ ░███ ░███  ░███  ░███  ░███ ░███ ░███ ]],
-      [[ ░███  ░░█████ ░███░░░  ░███ ░███ ░░███ ███   ░███  ░███ ░███ ░███ ]],
-      [[ █████  ░░█████░░██████ ░░██████   ░░█████    █████ █████░███ █████]],
-      [[░░░░░    ░░░░░  ░░░░░░   ░░░░░░     ░░░░░    ░░░░░ ░░░░░ ░░░ ░░░░░ ]],
-      [[                                                                   ]],
-      [[                                                                   ]],
-    },
-    center = {
-      {
-        icon = "   ",
-        icon_hl = "Title",
-        desc = "Restore Session                                      ",
-        desc_hl = "String",
-        key = "s",
-        key_hl = "Constant",
-        keymap = "SPC q s",
-        action = function()
-          vim.cmd("lua require('persistence').load()")
-        end,
-      },
-      {
-        icon = "   ",
-        icon_hl = "Title",
-        desc = "New File                                            ",
-        desc_hl = "String",
-        key = "n",
-        key_hl = "Constant",
-        keymap = "SPC f n",
-        action = "enew",
-      },
-      {
-        icon = "   ",
-        icon_hl = "Title",
-        desc = "Find File                                           ",
-        desc_hl = "String",
-        key = "f",
-        key_hl = "Constant",
-        keymap = "SPC f f",
-        action = "Telescope find_files",
-      },
-      {
-        icon = "   ",
-        icon_hl = "Title",
-        desc = "Recent Files                                        ",
-        desc_hl = "String",
-        key = "r",
-        key_hl = "Constant",
-        keymap = "SPC f r",
-        action = "Telescope oldfiles",
-      },
-      {
-        icon = "   ",
-        icon_hl = "Title",
-        desc = "Configuration                                       ",
-        desc_hl = "String",
-        key = "c",
-        key_hl = "Constant",
-        keymap = "SPC f c",
-        action = "cd ~/.config/nvim | e $MYVIMRC",
-      },
-      {
-        icon = "󰒲   ",
-        icon_hl = "Title",
-        desc = "Lazy                                                ",
-        desc_hl = "String",
-        key = "l",
-        key_hl = "Constant",
-        keymap = "SPC p l",
-        action = "Lazy",
-      },
-      {
-        icon = "   ",
-        icon_hl = "Title",
-        desc = "Quit Neovim                                         ",
-        desc_hl = "String",
-        key = "q",
-        key_hl = "Constant",
-        keymap = "SPC q q",
-        action = "qa",
-      },
-    },
+local ascii = require("ascii")
+local config = {}
+
+config.mru = { limit = 10 }
+config.project = { limit = 10 }
+
+config.header = ascii.get_random("text", "neovim")
+
+config.shortcut = {
+  {
+    desc = "  New file ",
+    action = "enew",
+    group = "@string",
+    key = "n",
   },
+  {
+    desc = "  Restore Session ",
+    action = function()
+      vim.cmd("lua require('persistence').load()")
+    end,
+    group = "@string",
+    key = "s",
+  },
+  {
+    desc = "   File ",
+    action = "Telescope find_files find_command=rg,--hidden,--files",
+    group = "@string",
+    key = "f",
+  },
+  {
+    desc = "   Update ",
+    action = "Lazy sync",
+    group = "@string",
+    key = "u",
+  },
+  {
+    desc = " 󰓅  Profile ",
+    action = "Lazy profile",
+    group = "@string",
+    key = "p",
+  },
+  {
+    desc = "   Quit ",
+    action = "q!",
+    group = "@macro",
+    key = "q",
+  },
+}
+
+config.week_header = { enable = false }
+config.footer = { "" }
+config.packages = { enable = true }
+local options = {
+  theme = "hyper",
+  config = config,
 }
 return options
