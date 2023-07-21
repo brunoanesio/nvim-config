@@ -42,8 +42,15 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    dependencies = { "nvim-tree/nvim-web-devicons", "meuter/lualine-so-fancy.nvim" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = function()
+      vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter" }, {
+        callback = function(_)
+          require("lualine").setup({})
+        end,
+        pattern = { "*.*" },
+        once = true,
+      })
       return require("plugins.configs.lualine")
     end,
   },
@@ -57,14 +64,6 @@ return {
   },
 
   {
-    "stevearc/dressing.nvim",
-    -- event = "BufRead",
-    opts = {
-      input = {
-        win_options = {
-          winblend = 0,
-        },
-      },
-    },
+    "MaximilianLloyd/ascii.nvim",
   },
 }

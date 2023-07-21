@@ -34,8 +34,25 @@ return {
       "nvim-tree/nvim-web-devicons", -- optional dependency
     },
     opts = {
+      create_autocmd = false,
+      show_modified = true,
       theme = "catppuccin",
     },
+    config = function(_, opts)
+      require("barbecue").setup(opts)
+      vim.api.nvim_create_autocmd({
+        "WinResized",
+        "BufWinEnter",
+        "CursorHold",
+        "InsertLeave",
+        "BufModifiedSet",
+      }, {
+        group = vim.api.nvim_create_augroup("barbecue.updater", {}),
+        callback = function()
+          require("barbecue.ui").update()
+        end,
+      })
+    end,
   },
 
   {
@@ -50,8 +67,7 @@ return {
 
   {
     "folke/which-key.nvim",
-    event = "VeryLazy",
-    keys = { "<space>", desc = "WhichKey" },
+    keys = { { "<space>", desc = "WhichKey" }, { "z=", desc = "WhichKey" } },
     opts = function()
       return require("plugins.configs.whichkey")
     end,
