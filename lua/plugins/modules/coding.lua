@@ -43,14 +43,12 @@ return {
     config = function()
       local opts = require("plugins.configs.mini")
       local comment = opts.comment_config
-      local indent = opts.indent_config
       local patterns = opts.patterns
       require("mini.surround").setup()
       require("mini.pairs").setup()
       require("mini.ai").setup()
       require("mini.jump").setup()
       require("mini.comment").setup(comment)
-      require("mini.indentscope").setup(indent)
       require("mini.hipatterns").setup(patterns)
       require("plugins.configs.mini").indent()
     end,

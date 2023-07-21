@@ -1,5 +1,13 @@
 return {
   {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "BufRead",
+    opts = function()
+      return require("plugins.configs.indent")
+    end,
+  },
+
+  {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
     dependencies = { { "nvim-tree/nvim-web-devicons" } },

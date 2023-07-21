@@ -61,11 +61,6 @@ local config = {
     rainbow_delimiters = true,
     which_key = true,
   },
-  color_overrides = {
-    mocha = {
-      base = "#1E1D2D",
-    },
-  },
   custom_highlights = function(colors)
     return {
       NeoTreeWinSeparator = { fg = colors.base, bg = colors.base },

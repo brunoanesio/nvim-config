@@ -1,5 +1,48 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local icons = require("plugins.utils").cmp_kinds
+
+local format = function(_, item)
+  local MAX_LABEL_WIDTH = 55
+  local function whitespace(max, len)
+    return (" "):rep(max - len)
+  end
+
+  local content = item.abbr
+  if #content > MAX_LABEL_WIDTH then
+    item.abbr = vim.fn.strcharpart(content, 0, MAX_LABEL_WIDTH) .. ".."
+  else
+    item.abbr = content .. whitespace(MAX_LABEL_WIDTH, #content)
+  end
+
+  item.kind = " " .. (icons[item.kind] or icons.Unknown) .. "│"
+
+  item.menu = nil
+  return item
+end
+
+local formatting = {
+  fields = { "kind", "abbr" },
+  format = format,
+}
+
+local window = {
+  completion = cmp.config.window.bordered({
+    scrollbar = true,
+    border = "single",
+    col_offset = -1,
+    side_padding = 0,
+  }),
+  documentation = cmp.config.window.bordered({
+    scrollbar = true,
+    border = "single",
+  }),
+}
+
+window.documentation.max_height = 18
+window.documentation.max_width = 80
+window.documentation.side_padding = 1
+
 local options = {
   completion = {
     completeopt = "menu,menuone,noinsert,preview",
@@ -54,21 +97,8 @@ local options = {
     { name = "buffer" },
     { name = "path" },
   },
-  formatting = {
-    fields = { "kind", "abbr", "menu" },
-    format = function(entry, item)
-      local icons = require("plugins.utils").cmp_kinds
-      item.kind = icons[item.kind]
-      item.menu = ({
-        nvim_lsp = "Lsp",
-        luasnip = "Snippet",
-        codeium = "Codeium",
-        buffer = "Buffer",
-        path = "Path",
-      })[entry.source.name]
-      return item
-    end,
-  },
+  formatting = formatting,
+  window = window,
   experimental = { ghost_text = true },
 }
 return options
