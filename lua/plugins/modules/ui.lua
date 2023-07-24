@@ -62,8 +62,4 @@ return {
       vim.notify = require("notify")
     end,
   },
-
-  {
-    "MaximilianLloyd/ascii.nvim",
-  },
 }
