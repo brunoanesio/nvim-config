@@ -13,6 +13,7 @@ return {
   {
     "hrsh7th/nvim-cmp",
     version = false,
+    commit = "6c84bc7",
     event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-buffer",
