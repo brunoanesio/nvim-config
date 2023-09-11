@@ -1,7 +1,7 @@
 local config = {}
 
-config.mru = { limit = 10 }
-config.project = { limit = 10 }
+config.mru = { limit = 5 }
+config.project = { limit = 5 }
 
 config.header = {
   [[                                    ]],
