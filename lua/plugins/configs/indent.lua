@@ -1,11 +1,14 @@
 local opts = {
-  show_end_of_line = true,
-  show_current_context = true,
-  show_current_context_start = false,
-  filetype_exclude = { "Neotree", "lazy", "dashboard", "help" },
-  use_treesitter = false,
-  use_treesitter_scope = false,
-  context_char = "│",
-  char = "┆",
+  exclude = { filetypes = { "Neotree", "lazy", "dashboard", "help" } },
+  indent = {
+    enabled = true,
+    char = "▎",
+  },
+  scope = {
+    enabled = true,
+    show_start = true,
+    show_end = false,
+    char = "▎",
+  },
 }
 return opts
