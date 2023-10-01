@@ -60,10 +60,11 @@ M.cmp_kinds = {
 M.mason_packages = {
   "bash-language-server",
   "black",
-  "css-lsp",
   "clangd",
   "clang-format",
+  "css-lsp",
   "curlylint",
+  "debugpy",
   "djlint",
   "emmet-ls",
   "html-lsp",
