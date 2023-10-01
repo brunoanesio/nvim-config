@@ -9,6 +9,12 @@ local opts = {
     show_start = true,
     show_end = false,
     char = "▎",
+    include = {
+      node_type = {
+        lua = { "return_statement", "table_constructor" },
+        python = { "function", "if_statement", "for_statement" },
+      },
+    },
   },
 }
 return opts
