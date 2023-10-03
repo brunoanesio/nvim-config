@@ -1,7 +1,6 @@
 local opts = {
   exclude = { filetypes = { "Neotree", "lazy", "dashboard", "help" } },
   indent = {
-    enabled = true,
     char = "▎",
   },
   scope = {
