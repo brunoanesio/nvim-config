@@ -25,6 +25,7 @@ return {
     "williamboman/mason.nvim",
     cmd = "Mason",
     keys = { { "<leader>li", "<cmd>Mason<CR>", desc = "Mason" } },
+    dependencies = { "stevearc/dressing.nvim" },
     opts = function()
       return require("plugins.configs.mason").opts
     end,
