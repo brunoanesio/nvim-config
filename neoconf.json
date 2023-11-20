@@ -30,10 +30,11 @@
       "pylsp.plugins.mccabe.enabled": false,
       "pylsp.plugins.rope_completion.enabled": false,
       "pylsp.plugins.rope_completion.eager": false,
-      "pylsp.plugins.rope_autoimport.enabled": true,
-      "pylsp.plugins.rope_autoimport.memory": true,
+      "pylsp.plugins.rope_autoimport.enabled": false,
+      "pylsp.plugins.rope_autoimport.memory": false,
       "pylsp.plugins.ruff.enabled": true,
       "pylsp.plugins.black.enabled": true,
+      "pylsp.plugins.black.line_length": 95,
       "pylsp.plugins.isort.enabled": true
     },
     "html": {
