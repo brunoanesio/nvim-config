@@ -1,6 +1,5 @@
 local opts = {
   ensure_installed = {
-    "help",
     "python",
     "lua",
     "javascript",
