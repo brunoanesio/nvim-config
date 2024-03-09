@@ -24,7 +24,7 @@ local options = {
   },
   icons = {
     breadcrumb = "»",
-    separator = "",
+    separator = "󰁕",
     group = "+",
   },
   popup_mappings = {

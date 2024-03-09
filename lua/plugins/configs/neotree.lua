@@ -18,10 +18,10 @@ local options = {
     content_layout = "center",
     tabs_layout = "equal",
     sources = {
-      { source = "filesystem", display_name = "  " },
-      { source = "buffers", display_name = "  " },
-      { source = "git_status", display_name = "  " },
-      { source = "diagnostics", display_name = " 裂" },
+      { source = "filesystem", display_name = " 󰉓 " },
+      { source = "buffers", display_name = " 󰈙 " },
+      { source = "git_status", display_name = " 󰊢 " },
+      { source = "diagnostics", display_name = " 󰒡" },
     },
   },
   window = {
