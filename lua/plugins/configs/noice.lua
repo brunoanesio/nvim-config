@@ -28,5 +28,11 @@ local options = {
     long_message_to_split = true,
     inc_rename = true,
   },
+  cmdline = {
+    format = {
+      search_down = { icon = " " },
+      search_up = { icon = " " },
+    },
+  },
 }
 return options
