@@ -40,6 +40,9 @@
     "html": {
       "html.format.enable": false,
       "html.autoClosingTags": true
+    },
+    "rust_analyzer": {
+      "rust-analyzer.procMacro.enable": true
     }
   }
 }
