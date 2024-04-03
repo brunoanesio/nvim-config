@@ -77,7 +77,6 @@ M.mason_packages = {
   "ruff-lsp",
   "shellcheck",
   "shfmt",
-  "sourcery",
   "stylua",
   "taplo",
 }
